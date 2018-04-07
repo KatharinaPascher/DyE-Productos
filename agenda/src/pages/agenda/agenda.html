@@ -23,5 +23,12 @@
 
 
 <ion-content padding>
-
+    <ion-list>
+        <button ion-item *ngFor="let tarea of tareas" (click)="onItemTapped($event, tarea)">
+          <p><strong>Tarea: </strong>{{tarea.tarea}}</p>     
+          <p><strong>Fecha: </strong>{{tarea.fecha}}</p>    
+          <p><strong>Lugar: </strong>{{tarea.lugar}}</p>    
+          <p><strong>Prioridad: </strong>{{tarea.prioridad}}</p>
+        </button>
+      </ion-list>
 </ion-content>

@@ -8,7 +8,12 @@ import { NuevoContactoPage} from '../pages/nuevo-contacto/nuevo-contacto';
 import { AgendaPage } from '../pages/agenda/agenda';
 import { AcercaDePage} from '../pages/acerca-de/acerca-de';
 import { ContactosPage} from '../pages/contactos/contactos';
-import { NuevaTareaPage} from '../pages/nueva-tarea/nueva-tarea'
+import { NuevaTareaPage} from '../pages/nueva-tarea/nueva-tarea';
+import { RegisterPage} from '../pages/register/register';
+import { Contacto } from '../models/contacto.model';
+import { ContactService} from '../services/contacto.services';
+import { Tarea } from '../models/tarea.model';
+import { TareaService} from '../services/tarea.services';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AgendaPage,
     ContactosPage,
     NuevaTareaPage,
-    NuevoContactoPage
+    NuevoContactoPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -37,12 +43,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AgendaPage,
     ContactosPage,
     NuevaTareaPage,
-    NuevoContactoPage
+    NuevoContactoPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ContactService,
+    TareaService
   ]
 })
 export class AppModule {}

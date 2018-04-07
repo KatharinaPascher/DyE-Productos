@@ -17,30 +17,30 @@
     <ion-list> 
     
       <ion-item>
-        <ion-label fixed>Nombre</ion-label>
+        <ion-label floating>Nombre</ion-label>
         <ion-input type="text"></ion-input> 
       </ion-item>  
 
       <ion-item> 
-        <ion-label fixed>Organización</ion-label> 
+        <ion-label floating>Organización</ion-label> 
         <ion-input type="text"></ion-input>
       </ion-item>
   
       <ion-item>    
-        <ion-label fixed>Móvil</ion-label>    
+        <ion-label floating>Móvil</ion-label>    
         <ion-input type="text"></ion-input>     
       </ion-item>
    
       <ion-item>  
-        <ion-label fixed>Correo</ion-label>      
+        <ion-label floating>Correo</ion-label>      
         <ion-input type="text"></ion-input>    
       </ion-item>
 
     </ion-list>
       
   <div padding>      
-    <button ion-button color="primary">Create</button>      
-    <button ion-button color="danger">Cancel</button>     
+    <button ion-button color="primary" (click)="toastContactoCreado()">Create</button>      
+    <button ion-button color="danger" (click)="cancelarContacto()">Cancel</button>     
   </div>
   
 </ion-content>

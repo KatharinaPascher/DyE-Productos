@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { NuevoContactoPage} from '../nuevo-contacto/nuevo-contacto'
 
+import { Contacto } from '../../models/contacto.model';
+import { ContactService} from '../../services/contacto.services';
+
+
 /**
  * Generated class for the ContactosPage page.
  *
@@ -17,7 +21,9 @@ import { NuevoContactoPage} from '../nuevo-contacto/nuevo-contacto'
 })
 export class ContactosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  contacts: Contacto []=[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private ContactService: ContactService) {
   }
 
   ionViewDidLoad() {
@@ -26,5 +32,13 @@ export class ContactosPage {
 
   onLoadNewPage(){ 
     this.navCtrl.push(NuevoContactoPage); 
+  }
+
+  ionViewWillEnter(){
+    this.contacts=this.ContactService.getContacts();
+  } 
+
+  onItemTapped($event, contact){
+    
   }
 }

@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { NuevaTareaPage} from '../nueva-tarea/nueva-tarea' ;
 
+import { Tarea } from '../../models/tarea.model';
+import { TareaService } from '../../services/tarea.services';
 
 /**
  * Generated class for the AgendaPage page.
@@ -17,8 +19,10 @@ import { NuevaTareaPage} from '../nueva-tarea/nueva-tarea' ;
   templateUrl: 'agenda.html',
 })
 export class AgendaPage {
+  
+  tareas: Tarea []=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private TareaService: TareaService) {
   }
 
   ionViewDidLoad() {
@@ -27,6 +31,14 @@ export class AgendaPage {
 
   onLoadNewPage(){ 
     this.navCtrl.push(NuevaTareaPage); 
+  }
+
+  ionViewWillEnter(){
+    this.tareas=this.TareaService.getTarea();
+  } 
+
+  onItemTapped($event, tarea){
+    
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the NuevoContactoPage page.
@@ -15,11 +16,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NuevoContactoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NuevoContactoPage');
+  }
+
+  toastContactoCreado() {
+    let toast = this.toastCtrl.create({
+      message: 'Agregamos tu contacto amigo',
+      duration: 3000,
+      position: 'middle'
+    });
+  
+    toast.present();
+
+    this.navCtrl.pop();
+  }
+
+  cancelarContacto(){
+    this.navCtrl.pop(); 
   }
 
 }

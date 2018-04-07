@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
-import { AcercaDePage } from '../acerca-de/acerca-de';
-import { AgendaPage } from '../agenda/agenda';
+
 
 /**
  * Generated class for the NuevaTareaPage page.
