@@ -26,7 +26,7 @@ export class NuevoContactoPage {
   toastContactoCreado() {
     let toast = this.toastCtrl.create({
       message: 'Agregamos tu contacto amigo',
-      duration: 3000,
+      duration: 1000,
       position: 'middle'
     });
   
