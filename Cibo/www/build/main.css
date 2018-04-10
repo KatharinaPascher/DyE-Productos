@@ -1,3 +1,101 @@
+.detail-container-maps {
+ 
+  margin-top: 30px;
+  margin-left: 20px;
+ 
+  font-size: 15px;
+  width: 250px;
+  height:50px;
+ 
+}
+
+.detail-container-number {
+ 
+  margin-top: 10px;
+  margin-left: 5px;
+ 
+  font-size: 15px;
+  width: 50px;
+  height:40px;
+
+ 
+}
+
+.detail-container-link {
+ 
+  margin-top: -45px;
+  margin-left: 50px;
+ 
+  font-size: 15px;
+  width:150px;
+  height:40px;
+ 
+ 
+}
+.detail-container-logos {
+ 
+  margin-top: 195px;
+  margin-left: 10px;
+ 
+  font-size: 30px;
+  width: 250px;
+  height:50px;
+ 
+}
+
+.detail-container-price {
+  position: absolute;
+  margin-top: 180px;
+  margin-left: 10px;
+  width: 150px;
+  height:30px;
+
+ 
+ 
+}
+
+
+.detail-container-hours {
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 10px;
+  width: 150px;
+  height:50px;
+  font-style: bold;
+ 
+}
+
+
+.detail-container-text {
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 10px;
+  width: 160px;
+  height:80px;
+ 
+ 
+}
+.detail-container-titel {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 165px;
+  height:40px;
+  font-size:20px;
+  
+ 
+ 
+}
+
+.detail-container img {
+  border-radius: 80px;
+  position: absolute;
+  border: 8px solid #F8F8F8;
+  margin-top: 20px;
+  margin-left: 180px;
+ 
+}
+
 .home-dislike img{
 
 position:absolute;

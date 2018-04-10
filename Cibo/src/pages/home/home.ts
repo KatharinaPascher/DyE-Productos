@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { DetailPage } from '../detail/detail';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,11 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  navController: any;
+  constructor(public naController: NavController, public navParams: NavParams) {
   }
-
+  
+  likeButton(){
+    this.naController.setRoot(DetailPage);
+    }
 }

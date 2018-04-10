@@ -15,6 +15,7 @@ import { DistancePage } from '../pages/distance/distance';
 import { AllergiesPage } from '../pages/allergies/allergies';
 import { PricePage } from '../pages/price/price';
 import { FoodPage } from '../pages/food/food';
+import { DetailPage } from '../pages/detail/detail';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FoodPage } from '../pages/food/food';
     DistancePage,
     AllergiesPage,
     PricePage,
-    FoodPage
+    FoodPage,
+    DetailPage
 
   ],
   imports: [
@@ -43,7 +45,8 @@ import { FoodPage } from '../pages/food/food';
     DistancePage,
     AllergiesPage,
     PricePage,
-    FoodPage
+    FoodPage,
+    DetailPage
   ],
   providers: [
     StatusBar,
