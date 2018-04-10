@@ -42,7 +42,7 @@ export class LoginPage {
       //Sesión iniciada correctamente
 
       let toast = this.toastCtrl.create({
-        message: 'Sesión iniciada correctamente',
+        message: 'Bienvenido '+this.user.email,
         duration: 1000,
         position: 'middle'
       });

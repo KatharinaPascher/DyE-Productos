@@ -1,35 +1,29 @@
+import { Injectable } from '@angular/core';
+
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Contacto } from "../models/contacto.model";
 
+@Injectable()
 export class ContactService{
-    private contacts: Contacto []= [
-        {
-            "nombre":"Andres",
-            "organizacion":"UC3M",
-            "movil":"666666666",
-            "correo":"andres@example.com"
-        },
-        {
-            "nombre":"Carlos Fontaseca",
-            "organizacion":"Ships&Boats",
-            "movil":"+344535435345",
-            "correo":"cfontaeca@cbcorp.com"
-        },
-        {
-            "nombre":"Juan Camaño",
-            "organizacion":"Big Motors",
-            "movil":"+3423443234234",
-            "correo":"jcamaño@bgmor.com"
-        }
-    ];
 
-    constructor(){ }
+    private contactosRef = this.afb.list<Contacto>('contactos');
+
+    constructor(private afb : AngularFireDatabase){
+    }
 
     addContact(value: Contacto){ 
-        this.contacts.push(value); 
+        return this.contactosRef.push(value); 
     }
 
     getContacts(){ 
-        return this.contacts; 
+        return this.contactosRef;
     }
 
+    updateContact(value: Contacto){
+        return this.contactosRef.update(value.key, value);
+    }
+    
+    removeContact(value: Contacto){
+        return this.contactosRef.remove(value.key);
+    }
 }

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { NuevaTareaPage} from '../nueva-tarea/nueva-tarea' ;
 
 import { Tarea } from '../../models/tarea.model';
 import { TareaService } from '../../services/tarea.services';
+import { VerTareaPage } from '../../pages/ver-tarea/ver-tarea' 
 
 /**
  * Generated class for the AgendaPage page.
@@ -20,9 +21,12 @@ import { TareaService } from '../../services/tarea.services';
 })
 export class AgendaPage {
   
-  tareas: Tarea []=[];
+  tareas$ : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private TareaService: TareaService) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private TareaService: TareaService,
+    private alertCtrl: AlertController ) {
   }
 
   ionViewDidLoad() {
@@ -34,11 +38,19 @@ export class AgendaPage {
   }
 
   ionViewWillEnter(){
-    this.tareas=this.TareaService.getTarea();
+    this.tareas$=this.TareaService
+    .getTareas()  //Retorna la DB
+    .snapshotChanges() //retorna los cambios en la DB (key and value)
+    .map(
+      changes => {
+        return changes.map(c=> ({
+          key: c.payload.key, ...c.payload.val()
+        }));
+      }); 
   } 
 
   onItemTapped($event, tarea){
-    
+    this.navCtrl.push(VerTareaPage, tarea);
   }
 
 }

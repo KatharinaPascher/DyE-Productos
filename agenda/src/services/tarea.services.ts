@@ -1,23 +1,30 @@
 import { Tarea } from "../models/tarea.model";
 
-export class TareaService{
-    private tareas: Tarea []= [
-        {
-            "tarea":"Hacer la práctica optativa de DEPI",
-            "fecha":"10 de abril",
-            "lugar":"UC3M",
-            "prioridad":"1"
-        }
-    ];
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Injectable } from '@angular/core';
 
-    constructor(){ }
+
+@Injectable()
+export class TareaService{
+
+    private tareasRef = this.afd.list<Tarea>('tareas');
+
+    constructor(public afd: AngularFireDatabase){ }
 
     addTarea(value: Tarea){ 
-        this.tareas.push(value); 
+        return this.tareasRef.push(value);
     }
 
-    getTarea(){ 
-        return this.tareas; 
+    getTareas(){ 
+        return this.tareasRef; 
+    }
+
+    updateTareas(value: Tarea){
+        return this.tareasRef.update(value.key, value);
+    }
+    
+    removeTareas(value: Tarea){
+        return this.tareasRef.remove(value.key);
     }
 
 }

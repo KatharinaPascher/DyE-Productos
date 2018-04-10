@@ -31,7 +31,8 @@ export class MyApp {
 
       this.auth.Session.subscribe(session=>{
         if(session){
-            this.rootPage = 'AgendaPage';
+         this.menu.swipeEnable(true); 
+         this.rootPage = 'AgendaPage';
         }
           else{
             this.rootPage = 'LoginPage';

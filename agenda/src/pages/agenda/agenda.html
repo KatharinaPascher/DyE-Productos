@@ -8,7 +8,7 @@
 
   <ion-navbar>
     
-    <ion-title>agenda</ion-title>
+    <ion-title>Agenda</ion-title>
     
     <ion-buttons end> 
       <button ion-button icon-only (click)="onLoadNewPage()"> 
@@ -24,7 +24,7 @@
 
 <ion-content padding>
     <ion-list>
-        <button ion-item *ngFor="let tarea of tareas" (click)="onItemTapped($event, tarea)">
+        <button ion-item *ngFor="let tarea of tareas$ | async" (click)="onItemTapped($event, tarea)">
           <p><strong>Tarea: </strong>{{tarea.tarea}}</p>     
           <p><strong>Fecha: </strong>{{tarea.fecha}}</p>    
           <p><strong>Lugar: </strong>{{tarea.lugar}}</p>    

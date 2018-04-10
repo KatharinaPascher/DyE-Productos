@@ -14,33 +14,33 @@
 
 
 <ion-content padding>
-    <ion-list> 
-    
-      <ion-item>
-        <ion-label floating>Nombre</ion-label>
-        <ion-input type="text"></ion-input> 
-      </ion-item>  
+    <form (ngSubmit)="contactoCreado(f.value)" #f="ngForm">
 
-      <ion-item> 
-        <ion-label floating>Organización</ion-label> 
-        <ion-input type="text"></ion-input>
-      </ion-item>
+        <ion-list>
   
-      <ion-item>    
-        <ion-label floating>Móvil</ion-label>    
-        <ion-input type="text"></ion-input>     
-      </ion-item>
-   
-      <ion-item>  
-        <ion-label floating>Correo</ion-label>      
-        <ion-input type="text"></ion-input>    
-      </ion-item>
+            <ion-item>
+              <ion-label>Nombre</ion-label>
+              <ion-input type="text" placeholder="Texto" name="nombre" ngModel required></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Organización</ion-label>
+              <ion-input type="text" placeholder="Texto" name="organizacion" ngModel required></ion-input>
+            </ion-item>
+  
 
-    </ion-list>
-      
-  <div padding>      
-    <button ion-button color="primary" (click)="toastContactoCreado()">Create</button>      
-    <button ion-button color="danger" (click)="cancelarContacto()">Cancel</button>     
-  </div>
+            <ion-item>
+                <ion-label>Móvil</ion-label>
+                <ion-input type="number"  name="movil" ngModel></ion-input>
+            </ion-item>
   
+            <ion-item>
+              <ion-label>Correo</ion-label>
+              <ion-input type="text"  name="correo" ngModel></ion-input>
+
+          </ion-item>
+        </ion-list>
+
+         <button ion-button block type="submit" [disabled]="!f.valid">Aceptar</button>
+    </form>
 </ion-content>

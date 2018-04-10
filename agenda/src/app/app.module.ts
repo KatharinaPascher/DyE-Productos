@@ -14,6 +14,8 @@ import { Contacto } from '../models/contacto.model';
 import { ContactService} from '../services/contacto.services';
 import { Tarea } from '../models/tarea.model';
 import { TareaService} from '../services/tarea.services';
+import { VerContactoPage } from '../pages/ver-contacto/ver-contacto'
+import { VerTareaPage } from '../pages/ver-tarea/ver-tarea' 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -47,7 +49,9 @@ export const firebaseConfig = {
     ContactosPage,
     NuevaTareaPage,
     NuevoContactoPage,
-    RegisterPage
+    RegisterPage,
+    VerContactoPage,
+    VerTareaPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +72,9 @@ export const firebaseConfig = {
     ContactosPage,
     NuevaTareaPage,
     NuevoContactoPage,
-    RegisterPage
+    RegisterPage,
+    VerTareaPage,
+    VerContactoPage
   ],
   providers: [
     StatusBar,

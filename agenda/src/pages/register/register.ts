@@ -36,7 +36,7 @@ export class RegisterPage {
       // El usuario se ha creado correctamente
 
       let toast = this.toastCtrl.create({
-        message: 'Usuario Creado Correctamente',
+        message: 'Usuario '+this.user.email+' creado',
         duration: 1000,
         position: 'middle'
       });
