@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -8,24 +8,43 @@ import { AcercaDePage } from '../pages/acerca-de/acerca-de';
 import { LoginPage } from '../pages/login/login';
 import { ContactosPage} from '../pages/contactos/contactos';
 
+import { AuthProvider } from '../providers/auth/auth';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = 'LoginPage';
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    private auth: AuthProvider,
+    public menu : MenuController) {
+    
+      this.initializeApp();
 
-    // used for an example of ngFor and navigation
+      this.auth.Session.subscribe(session=>{
+        if(session){
+         this.menu.swipeEnable(true); 
+         this.rootPage = 'AgendaPage';
+        }
+          else{
+            this.rootPage = 'LoginPage';
+          }
+      });
+
+
+      // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Contactos', component: ContactosPage},
       { title: 'Agenda', component: AgendaPage},
-      { title: 'Acerca de', component: AcercaDePage},
+      { title: 'Acerca de', component: AcercaDePage}
     ];
 
   }
@@ -44,4 +63,11 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+  cerrarSesion(){
+    this.menu.toggle();
+
+    this.auth.logout();
+}
+
 }

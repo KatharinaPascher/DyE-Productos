@@ -3,5 +3,5 @@ export interface Tarea {
     tarea: string; 
     fecha: string; 
     lugar: string; 
-    prioridad: string; 
+    prioridad: number; 
 }

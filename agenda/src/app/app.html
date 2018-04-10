@@ -5,10 +5,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+   <ion-content>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <button logout ion-item  (click)="cerrarSesion()">
+        Cerrar Sesión
       </button>
     </ion-list>
   </ion-content>

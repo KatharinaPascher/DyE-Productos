@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 
+import { ContactService } from '../../services/contacto.services';
+import { Contacto } from '../../models/contacto.model';
+
 /**
  * Generated class for the NuevoContactoPage page.
  *
@@ -16,27 +19,29 @@ import { ToastController } from 'ionic-angular';
 })
 export class NuevoContactoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public toastCtrl: ToastController,
+    public contactoService: ContactService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NuevoContactoPage');
   }
 
-  toastContactoCreado() {
+  contactoCreado(value: Contacto){
+
+    this.contactoService.addContact(value).then(ref => {
+  });
+    this.navCtrl.pop();
+
     let toast = this.toastCtrl.create({
       message: 'Agregamos tu contacto amigo',
-      duration: 3000,
+      duration: 1000,
       position: 'middle'
     });
   
     toast.present();
-
-    this.navCtrl.pop();
-  }
-
-  cancelarContacto(){
-    this.navCtrl.pop(); 
   }
 
 }

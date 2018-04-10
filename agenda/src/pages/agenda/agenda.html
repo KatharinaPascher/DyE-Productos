@@ -6,10 +6,14 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     
-    <ion-title>agenda</ion-title>
-    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+      </button>
+
+      <ion-title>Agenda</ion-title>
+
     <ion-buttons end> 
       <button ion-button icon-only (click)="onLoadNewPage()"> 
         <ion-icon name="add">
@@ -24,7 +28,7 @@
 
 <ion-content padding>
     <ion-list>
-        <button ion-item *ngFor="let tarea of tareas" (click)="onItemTapped($event, tarea)">
+        <button ion-item *ngFor="let tarea of tareas$ | async" (click)="onItemTapped($event, tarea)">
           <p><strong>Tarea: </strong>{{tarea.tarea}}</p>     
           <p><strong>Fecha: </strong>{{tarea.fecha}}</p>    
           <p><strong>Lugar: </strong>{{tarea.lugar}}</p>    
