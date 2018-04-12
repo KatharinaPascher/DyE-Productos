@@ -17,6 +17,26 @@ import { PricePage } from '../pages/price/price';
 import { FoodPage } from '../pages/food/food';
 import { DetailPage } from '../pages/detail/detail';
 
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage} from '../pages/register/register';
+
+import { LoginPageModule } from '../pages/login/login.module';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthProvider } from '../providers/auth/auth'; 
+
+/** constante firebaseConfig con la información de nuestro api de firebase */
+export const firebaseConfig = {
+  apiKey: "AIzaSyCQcpvZQUcXYWPY6Q9p--AFLsLRzDg8GrA",
+  authDomain: "bbdd-cibo-login.firebaseapp.com",
+  databaseURL: "https://bbdd-cibo-login.firebaseio.com",
+  projectId: "bbdd-cibo-login",
+  storageBucket: "",
+  messagingSenderId: "93991556088"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,16 +48,22 @@ import { DetailPage } from '../pages/detail/detail';
     AllergiesPage,
     PricePage,
     FoodPage,
-    DetailPage
-
+    DetailPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    LoginPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
+    RegisterPage,
     SettingsPage,
     FavsPage,
     HomePage,
@@ -51,7 +77,8 @@ import { DetailPage } from '../pages/detail/detail';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider
   ]
 })
 export class AppModule {}
