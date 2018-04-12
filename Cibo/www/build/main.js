@@ -4,7 +4,7 @@ webpackJsonp([6],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllergiesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -19,29 +19,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the DetailPage page.
+ * Generated class for the AllergiesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var DetailPage = /** @class */ (function () {
-    function DetailPage(navCtrl, navParams) {
+var AllergiesPage = /** @class */ (function () {
+    function AllergiesPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    DetailPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DetailPage');
+    AllergiesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AllergiesPage');
     };
-    DetailPage = __decorate([
+    AllergiesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-detail',template:/*ion-inline-start:"/Users/katharinapascher/Desktop/Cibo/src/pages/detail/detail.html"*/'<!--\n  Generated template for the DetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  \n\n</ion-header>\n\n\n<ion-content padding>\n   \n    <section class = "detail-container">\n    \n        <img width="120" height="120" object-fit= "fill" \n        src="../assets/foodpics/Brisket Panini, Cote Sud, 04 93 95 89 44, 2 Place Mejanne, 06560 Sophia Antipolis, France.png"> \n   \n</section>\n<section class = "detail-container-titel">\n    Brisket Panini\n\n  </section>\n      <section class = "detail-container-text">\n          Corte Ingles <br>\n          Calle de la Princesa, 56, \n          28008 Madrid <br>\n          Spain\n\n        </section>\n\n        <section class = "detail-container-hours">\n          <b>\n           Mo-Fr : 09.40 - 18.30\n           Sa,Su : 10.00 - 22.00\n          </b>\n          </section>\n          <section class = "detail-container-price">\n              12,30€\n    \n            </section>\n\n <section class = "detail-container-logos">\n    <ion-icon  name="logo-twitter" item-start></ion-icon>\n    <ion-icon padding="0,5px" name="logo-facebook" item-start></ion-icon>\n    <ion-icon  name="logo-instagram" item-start></ion-icon>\n    <ion-icon  padding="0,5px" name="star" item-start></ion-icon>\n \n  </section>\n\n    <section class = "detail-container-number">\n        <img  width="40" height="40" object-fit= "fill" \n        src="../assets/imgs/PhoneIcon copy.jpg">  \n    </section>\n       \n   <section class = "detail-container-link">\n        <a href="https://www.google.com" padding="2px" class="button"> www.bistro.com </a>\n   \n        \n     \n      </section>\n      <section class = "detail-container-maps">\n          <div id="map">My map will go here</div>\n       \n        </section>\n\n</ion-content>\n'/*ion-inline-end:"/Users/katharinapascher/Desktop/Cibo/src/pages/detail/detail.html"*/,
+            selector: 'page-allergies',template:/*ion-inline-start:"/Users/katharinapascher/Desktop/Cibo/src/pages/allergies/allergies.html"*/'<!--\n  Generated template for the AllergiesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n      <ion-list>\n\n        <ion-item>\n          <ion-label>Vegan</ion-label>\n          <ion-checkbox [(ngModel)]="vegan"></ion-checkbox>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label>Gluten-Free</ion-label>\n          <ion-checkbox [(ngModel)]="glutenfree" ></ion-checkbox>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label>Vegetarian</ion-label>\n          <ion-checkbox [(ngModel)]="vegetarian"></ion-checkbox>\n        </ion-item>\n    </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/katharinapascher/Desktop/Cibo/src/pages/allergies/allergies.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
-    ], DetailPage);
-    return DetailPage;
+    ], AllergiesPage);
+    return AllergiesPage;
 }());
 
-//# sourceMappingURL=detail.js.map
+//# sourceMappingURL=allergies.js.map
 
 /***/ }),
 
@@ -190,7 +190,7 @@ var PricePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__distance_distance__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__price_price__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__food_food__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__allergies_allergies__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__allergies_allergies__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -267,11 +267,11 @@ webpackEmptyAsyncContext.id = 114;
 
 var map = {
 	"../pages/allergies/allergies.module": [
-		277,
+		278,
 		5
 	],
 	"../pages/detail/detail.module": [
-		278,
+		277,
 		4
 	],
 	"../pages/distance/distance.module": [
@@ -389,7 +389,7 @@ var FavsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detail_detail__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detail_detail__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -412,7 +412,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/katharinapascher/Desktop/Cibo/src/pages/home/home.html"*/'<ion-header>\n  \n</ion-header>\n\n<ion-content padding>\n\n\n    <section class = "home-container">\n      \n    <img width="220" height="220" object-fit= "fill"  \n    src="../assets/foodpics/Brisket Panini, Cote Sud, 04 93 95 89 44, 2 Place Mejanne, 06560 Sophia Antipolis, France.png"> \n\n    </section>\n\n    <section class = "home-dislike">\n      \n            <img width="90" height="90" object-fit= "fill"  \n            src="../assets/imgs/DISLIKE.jpg"> \n            <button ion-button color="danger" clear>Dislike</button>\n\n          \n        \n            </section>\n           \n    <section class = "home-like">\n      \n                    \n        \n                    <img width="90" height="90" object-fit= "fill"  \n                    src="../assets/imgs/Thumbsup.jpg"> \n                    <button ion-item (click) = "likeButton()"color="secondary" clear>Like</button>\n                \n                    </section>\n\n</ion-content>\n'/*ion-inline-end:"/Users/katharinapascher/Desktop/Cibo/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/katharinapascher/Desktop/Cibo/src/pages/home/home.html"*/'<ion-header>\n  \n</ion-header>\n\n<ion-content padding>\n\n\n    <section class = "home-container">\n      \n    <img width="220" height="220" object-fit= "fill"  \n    src="../assets/foodpics/Brisket Panini, Cote Sud, 04 93 95 89 44, 2 Place Mejanne, 06560 Sophia Antipolis, France.png"> \n\n    </section>\n\n    <section class = "home-dislike">\n      \n            <img width="90" height="90" object-fit= "fill"  \n            src="../assets/imgs/DISLIKE.jpg"> \n            <button ion-button  clear></button>\n\n          \n        \n            </section>\n           \n    <section class = "home-like">\n      \n                    \n        \n                    <img width="90" height="90" object-fit= "fill"  \n                    src="../assets/imgs/Thumbsup.jpg"> \n                    <button ion-button clear (click) = "likeButton()"></button>\n                \n                    </section>\n\n</ion-content>\n'/*ion-inline-end:"/Users/katharinapascher/Desktop/Cibo/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], HomePage);
@@ -453,10 +453,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_distance_distance__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_allergies_allergies__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_allergies_allergies__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_price_price__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_food_food__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_detail_detail__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_detail_detail__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -499,8 +499,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/allergies/allergies.module#AllergiesPageModule', name: 'AllergiesPage', segment: 'allergies', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/allergies/allergies.module#AllergiesPageModule', name: 'AllergiesPage', segment: 'allergies', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/distance/distance.module#DistancePageModule', name: 'DistancePage', segment: 'distance', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/food/food.module#FoodPageModule', name: 'FoodPage', segment: 'food', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/price/price.module#PricePageModule', name: 'PricePage', segment: 'price', priority: 'low', defaultHistory: [] },
@@ -585,7 +585,7 @@ var MyApp = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllergiesPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -600,29 +600,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the AllergiesPage page.
+ * Generated class for the DetailPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var AllergiesPage = /** @class */ (function () {
-    function AllergiesPage(navCtrl, navParams) {
+var DetailPage = /** @class */ (function () {
+    function DetailPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    AllergiesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AllergiesPage');
+    DetailPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DetailPage');
     };
-    AllergiesPage = __decorate([
+    DetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-allergies',template:/*ion-inline-start:"/Users/katharinapascher/Desktop/Cibo/src/pages/allergies/allergies.html"*/'<!--\n  Generated template for the AllergiesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n      <ion-list>\n\n        <ion-item>\n          <ion-label>Vegan</ion-label>\n          <ion-checkbox [(ngModel)]="vegan"></ion-checkbox>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label>Gluten-Free</ion-label>\n          <ion-checkbox [(ngModel)]="glutenfree" ></ion-checkbox>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label>Vegetarian</ion-label>\n          <ion-checkbox [(ngModel)]="vegetarian"></ion-checkbox>\n        </ion-item>\n    </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/katharinapascher/Desktop/Cibo/src/pages/allergies/allergies.html"*/,
+            selector: 'page-detail',template:/*ion-inline-start:"/Users/katharinapascher/Desktop/Cibo/src/pages/detail/detail.html"*/'<!--\n  Generated template for the DetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  \n\n</ion-header>\n\n\n<ion-content padding>\n   \n    <section class = "detail-container">\n    \n        <img width="120" height="120" object-fit= "fill" \n        src="../assets/foodpics/Brisket Panini, Cote Sud, 04 93 95 89 44, 2 Place Mejanne, 06560 Sophia Antipolis, France.png"> \n   \n</section>\n<section class = "detail-container-titel">\n    Brisket Panini\n\n  </section>\n      <section class = "detail-container-text">\n          Corte Ingles <br>\n          Calle de la Princesa, 56, \n          28008 Madrid <br>\n          Spain\n\n        </section>\n\n        <section class = "detail-container-hours">\n          <b>\n           Mo-Fr : 09.40 - 18.30\n           Sa,Su : 10.00 - 22.00\n          </b>\n          </section>\n          <section class = "detail-container-price">\n              12,30€\n    \n            </section>\n\n <section class = "detail-container-logos">\n    <ion-icon  name="logo-twitter" item-start></ion-icon>\n    <ion-icon padding="0,5px" name="logo-facebook" item-start></ion-icon>\n    <ion-icon  name="logo-instagram" item-start></ion-icon>\n    <ion-icon  padding="0,5px" name="star" item-start></ion-icon>\n \n  </section>\n\n    <section class = "detail-container-number">\n        <img  width="40" height="40" object-fit= "fill" \n        src="../assets/imgs/PhoneIcon copy.jpg">  \n    </section>\n       \n   <section class = "detail-container-link">\n        <a href="https://www.google.com" padding="2px" class="button"> www.bistro.com </a>\n   \n        \n     \n      </section>\n      <section class = "detail-container-maps">\n          <div id="map">My map will go here</div>\n       \n        </section>\n\n</ion-content>\n'/*ion-inline-end:"/Users/katharinapascher/Desktop/Cibo/src/pages/detail/detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
-    ], AllergiesPage);
-    return AllergiesPage;
+    ], DetailPage);
+    return DetailPage;
 }());
 
-//# sourceMappingURL=allergies.js.map
+//# sourceMappingURL=detail.js.map
 
 /***/ })
 
