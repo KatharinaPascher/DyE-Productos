@@ -80,7 +80,7 @@ export class MyApp {
   }
 
   cerrarSesion(){
-    this.menu.toggle();
+   // this.menu.toggle();
 
     this.auth.logout();
 }

@@ -5,6 +5,7 @@ import { PricePage } from '../price/price';
 import { FoodPage } from '../food/food';
 import { AllergiesPage } from '../allergies/allergies';
 
+import { AuthProvider } from '../../providers/auth/auth';
 
 
 /**
@@ -22,7 +23,7 @@ import { AllergiesPage } from '../allergies/allergies';
 export class SettingsPage {
 
   navController: any;
-  constructor(public naController: NavController, public navParams: NavParams) {
+  constructor(public naController: NavController, public navParams: NavParams, public auth : AuthProvider) {
   }
 
   distanceButton(){
@@ -44,4 +45,9 @@ export class SettingsPage {
     console.log('ionViewDidLoad SettingsPage');
   }
 
+  cerrarSesion(){
+    //this.menu.toggle();
+
+    this.auth.logout();
+}
 }
