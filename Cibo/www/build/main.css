@@ -1,3 +1,140 @@
+.detail-container-maps {
+ 
+  margin-top: 30px;
+  margin-left: 20px;
+ 
+  font-size: 15px;
+  width: 250px;
+  height:50px;
+ 
+}
+
+.detail-container-number {
+ 
+  margin-top: 10px;
+  margin-left: 5px;
+ 
+  font-size: 15px;
+  width: 50px;
+  height:40px;
+
+ 
+}
+
+.detail-container-link {
+ 
+  margin-top: -45px;
+  margin-left: 50px;
+ 
+  font-size: 15px;
+  width:150px;
+  height:40px;
+ 
+ 
+}
+.detail-container-logos {
+ 
+  margin-top: 195px;
+  margin-left: 10px;
+ 
+  font-size: 30px;
+  width: 250px;
+  height:50px;
+ 
+}
+
+.detail-container-price {
+  position: absolute;
+  margin-top: 180px;
+  margin-left: 10px;
+  width: 150px;
+  height:30px;
+
+ 
+ 
+}
+
+
+.detail-container-hours {
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 10px;
+  width: 150px;
+  height:50px;
+  font-style: bold;
+ 
+}
+
+
+.detail-container-text {
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 10px;
+  width: 160px;
+  height:80px;
+ 
+ 
+}
+.detail-container-titel {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 165px;
+  height:40px;
+  font-size:20px;
+  
+ 
+ 
+}
+
+.detail-container img {
+  border-radius: 80px;
+  position: absolute;
+  border: 8px solid #F8F8F8;
+  margin-top: 20px;
+  margin-left: 180px;
+ 
+}
+
+.home-dislike img{
+
+position:absolute;
+left: 50%; margin-left: -105px;
+  top: 50%; margin-top: 70px;
+
+}
+.home-dislike button{
+
+  position:absolute;
+  left: 50%; margin-left: -105px;
+    top: 50%; margin-top: 90px;
+  
+  }
+
+  .home-like button{
+
+    position:absolute;
+    left: 50%; margin-left: 40px;
+    top: 50%; margin-top: 95px;
+    
+    }
+
+.home-like img{
+
+  position:absolute;
+  left: 50%; margin-left: 20px;
+  top: 50%; margin-top: 70px;
+  
+  }
+.home-container img {
+  border-radius: 30px;
+  position: absolute;
+  border: 8px solid #F8F8F8;
+  left: 50%; margin-left: -110px;
+  top: 50%; margin-top: -180px;
+ 
+}
+
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -19835,12 +19972,17 @@ ion-spinner.spinner-paused svg {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  min-height: 60px ;
+  margin-top: 10px;
   border-top: 0.55px solid rgba(0, 0, 0, 0.3);
-  background: #f8f8f8;
+  background: transparent;
+  background-image: url("../assets/imgs/TopBarNoButtons.jpg");
+  background-size: 75%;
+  background-position: center;
 }
 
 .tabs-ios[tabsPlacement=top] .tabbar {
-  border-top: 0;
+  border-top: 50;
   border-bottom: 0.55px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -19848,8 +19990,8 @@ ion-spinner.spinner-paused svg {
   max-width: 240px;
   min-height: 49px;
   font-size: 10px;
-  font-weight: 500;
-  color: #8c8c8c;
+  font-weight: bold;
+  color: white;
   padding: 0 2px;
 }
 
@@ -19878,7 +20020,7 @@ ion-spinner.spinner-paused svg {
   min-width: 35px;
   height: 30px;
   font-size: 30px;
-  color: #8c8c8c;
+  color: white;
 }
 
 .tabs-ios .tab-button-icon::before {
@@ -20006,12 +20148,16 @@ ion-spinner.spinner-paused svg {
 
 .tabs-md .tabbar {
   background: #f8f8f8;
+   background: transparent;
+  background-image: url("../assets/imgs/TopBarNoButtons.jpg");
+  background-size: 88%;
+  background-position: center;
 }
 
 .tabs-md .tab-button {
   min-height: 5.6rem;
-  font-weight: normal;
-  color: rgba(60, 60, 60, 0.7);
+  font-weight: bold;
+  color: white;
   padding: 0;
 }
 
@@ -20054,7 +20200,7 @@ ion-spinner.spinner-paused svg {
   margin-top: 1px;
   min-width: 2.4rem;
   font-size: 2.4rem;
-  color: rgba(60, 60, 60, 0.7);
+  color: white;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -20212,7 +20358,11 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-wp .tabbar {
-  background: #f8f8f8;
+  background: transparent;
+  background-image: url("../assets/imgs/TopBarNoButtons.jpg");
+  background-size: 90%;
+  background-position: center;
+  
 }
 
 .tabs-wp .tab-button {
@@ -20220,8 +20370,8 @@ ion-spinner.spinner-paused svg {
   min-height: 4.8rem;
   border-bottom: 2px solid transparent;
   font-size: 1.2rem;
-  font-weight: normal;
-  color: rgba(140, 140, 140, 0.7);
+  font-weight: bold;
+  color: white;
   -webkit-box-shadow: none;
   box-shadow: none;
   padding: 12px 10px 5px;
@@ -20253,7 +20403,7 @@ ion-spinner.spinner-paused svg {
 .tabs-wp .tab-button-icon {
   min-width: 2.4rem;
   font-size: 2.4rem;
-  color: rgba(140, 140, 140, 0.7);
+  color: white;
 }
 
 .tabs-wp .tab-button[aria-selected=true] .tab-button-icon {
