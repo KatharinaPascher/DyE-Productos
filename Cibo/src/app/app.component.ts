@@ -39,14 +39,13 @@ export class MyApp {
     public platform: Platform, 
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen,
-    private auth: AuthProvider,
-    public menu : MenuController) {
+    private auth: AuthProvider
+  ) {
     
       this.initializeApp();
 
       this.auth.Session.subscribe(session=>{
         if(session){
-         this.menu.swipeEnable(true); 
          this.rootPage = TabsPage;
         }
           else{
@@ -79,9 +78,8 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
+  //Cerrar sesión
   cerrarSesion(){
-    this.menu.toggle();
-
     this.auth.logout();
 }
 

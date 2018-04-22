@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .registerButton-container{
   
@@ -183,6 +184,8 @@ left: 50%; margin-left: -105px;
  
 }
 
+=======
+>>>>>>> 3c09773429989b83195f356e82cf775f80954d3b
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -20020,17 +20023,12 @@ ion-spinner.spinner-paused svg {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  min-height: 60px ;
-  margin-top: 10px;
   border-top: 0.55px solid rgba(0, 0, 0, 0.3);
-  background: transparent;
-  background-image: url("../assets/imgs/TopBarNoButtons.jpg");
-  background-size: 75%;
-  background-position: center;
+  background: #f8f8f8;
 }
 
 .tabs-ios[tabsPlacement=top] .tabbar {
-  border-top: 50;
+  border-top: 0;
   border-bottom: 0.55px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -20038,8 +20036,8 @@ ion-spinner.spinner-paused svg {
   max-width: 240px;
   min-height: 49px;
   font-size: 10px;
-  font-weight: bold;
-  color: white;
+  font-weight: 500;
+  color: #8c8c8c;
   padding: 0 2px;
 }
 
@@ -20068,7 +20066,7 @@ ion-spinner.spinner-paused svg {
   min-width: 35px;
   height: 30px;
   font-size: 30px;
-  color: white;
+  color: #8c8c8c;
 }
 
 .tabs-ios .tab-button-icon::before {
@@ -20196,16 +20194,12 @@ ion-spinner.spinner-paused svg {
 
 .tabs-md .tabbar {
   background: #f8f8f8;
-   background: transparent;
-  background-image: url("../assets/imgs/TopBarNoButtons.jpg");
-  background-size: 88%;
-  background-position: center;
 }
 
 .tabs-md .tab-button {
   min-height: 5.6rem;
-  font-weight: bold;
-  color: white;
+  font-weight: normal;
+  color: rgba(60, 60, 60, 0.7);
   padding: 0;
 }
 
@@ -20248,7 +20242,7 @@ ion-spinner.spinner-paused svg {
   margin-top: 1px;
   min-width: 2.4rem;
   font-size: 2.4rem;
-  color: white;
+  color: rgba(60, 60, 60, 0.7);
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -20406,11 +20400,7 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-wp .tabbar {
-  background: transparent;
-  background-image: url("../assets/imgs/TopBarNoButtons.jpg");
-  background-size: 90%;
-  background-position: center;
-  
+  background: #f8f8f8;
 }
 
 .tabs-wp .tab-button {
@@ -20418,8 +20408,8 @@ ion-spinner.spinner-paused svg {
   min-height: 4.8rem;
   border-bottom: 2px solid transparent;
   font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
+  font-weight: normal;
+  color: rgba(140, 140, 140, 0.7);
   -webkit-box-shadow: none;
   box-shadow: none;
   padding: 12px 10px 5px;
@@ -20451,7 +20441,7 @@ ion-spinner.spinner-paused svg {
 .tabs-wp .tab-button-icon {
   min-width: 2.4rem;
   font-size: 2.4rem;
-  color: white;
+  color: rgba(140, 140, 140, 0.7);
 }
 
 .tabs-wp .tab-button[aria-selected=true] .tab-button-icon {
