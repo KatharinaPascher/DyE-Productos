@@ -1,8 +1,0 @@
-{
-  "name": "Cibo1",
-  "app_id": "1461d497",
-  "type": "ionic-angular",
-  "integrations": {
-    "cordova": {}
-  }
-}

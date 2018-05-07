@@ -22,6 +22,7 @@ import { RegisterPage} from '../pages/register/register';
 
 import { LoginPageModule } from '../pages/login/login.module';
 
+/*Imports de firebase*/
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
