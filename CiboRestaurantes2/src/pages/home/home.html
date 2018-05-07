@@ -1,0 +1,52 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+   
+      <img src="{{imagesource}}"/>
+    
+      <ion-card-content>
+        <ion-card-title>
+          Nombre del restaurante 
+        </ion-card-title>
+  
+        <p>
+          Una descripción que puede ser muy larga...
+        </p>
+  
+      </ion-card-content>
+  
+      <ion-item>
+        <ion-icon name='at' item-start style="color: #d03e84"></ion-icon>
+        Sitio web:
+        <ion-badge item-end>www.a.com</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name='navigate' item-start style="color: #55acee"></ion-icon>
+        Dirección:
+        <ion-badge item-end>Calle tal..sdfsfadsdsadsdsaddasddsadfsdfsdfsdfsdfsdf.</ion-badge>
+      </ion-item>
+
+      <ion-item>
+          <ion-icon name='camera' item-start style="color: #55acee"></ion-icon>
+          Fotos subidas:
+          <ion-badge item-end>555</ion-badge>
+      </ion-item>  
+
+    </ion-card>
+    
+    <ion-card #map id="map"></ion-card>
+
+    <button ion-button color="danger" block (click)='cerrarSesion()'>
+        <ion-icon name="exit"></ion-icon>
+        Cerrar Sesión</button>
+
+  
+  </ion-content>
+
+
+<!--Google Maps API Key AIzaSyAQe495ykATR6MLfJ1X6LtCNTpA_MCPIT4 -->
