@@ -5,9 +5,9 @@
 }
 
 .center{
-    padding-top: 70%;
+    padding-top: 60%;
 }
 
 .transparent{
-    background-color: yellow;
+    background-color: transparentize($color: #FFFFFF, $amount: 0.2 );
 }
