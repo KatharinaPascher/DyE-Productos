@@ -5,16 +5,16 @@
 <ion-content>
 
     <ion-card>
-   
-      <img src="{{imagesource}}"/>
-    
+      
+      <img id='foto' src={{urls}}/>
+
       <ion-card-content>
         <ion-card-title>
-          Nombre del restaurante 
+          {{restaurante.nombre}}
         </ion-card-title>
   
         <p>
-          Una descripción que puede ser muy larga...
+          {{restaurante.user}}
         </p>
   
       </ion-card-content>
@@ -22,7 +22,7 @@
       <ion-item>
         <ion-icon name='at' item-start style="color: #d03e84"></ion-icon>
         Sitio web:
-        <ion-badge item-end>www.a.com</ion-badge>
+        <ion-badge item-end>{{name}}</ion-badge>
       </ion-item>
 
       <ion-item>

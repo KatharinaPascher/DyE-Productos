@@ -1,9 +1,9 @@
 // image-provider.ts
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase';
-
+import firebase from 'firebase';
 export class ImageProvider {
 
+  
   constructor() {
   }
 
@@ -27,7 +27,8 @@ export class ImageProvider {
   getLogo(imageId: string): any {
     let storageRef = firebase.storage().ref();
     let imageRef = storageRef.child(`${'logos'}/${imageId}.JPG`);
-    return imageRef.getDownloadURL();
+    console.log(imageRef.getDownloadURL);
+    return imageRef.getDownloadURL;
   }
 
   /**Función que devuelve una imagen */
