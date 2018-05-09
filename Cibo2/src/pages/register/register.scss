@@ -1,13 +1,13 @@
-.page-login {
+.page-register {
     background: url('../assets/imgs/OpeningScreen.jpg');
     width: 100%;
     background-size: 100% 100%;
 }
 
-.center{
-    padding-top: 60%;
+.center-register{
+    padding-top: 40%;
 }
 
-.transparent{
+.transparent-register{
     background-color: transparentize($color: #FFFFFF, $amount: 0.2 );
 }

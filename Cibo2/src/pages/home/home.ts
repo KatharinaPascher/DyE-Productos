@@ -1,74 +1,38 @@
-import { Component, ViewChild, NgZone } from '@angular/core';
-import { NavController , ToastController , AlertController} from 'ionic-angular';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Preferences } from '../../models/preferences.model';
+import { SharedataProvider } from '../../providers/sharedata/sharedata';
 
-import { ImageProvider } from '../../providers/image/image';
-import { AuthProvider } from '../../providers/auth/auth';
-import { MapType } from '@angular/compiler/src/output/output_ast';
-import { GoogleAuthProvider } from '@firebase/auth-types';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { RestauranteProvider} from '../../providers/restaurante/restaurante';
+/**
+ * Generated class for the HomePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
-import firebase from 'firebase';
-import { Restaurante } from '../../models/restaurante.model';
-
-//declarar esta variable porque de alguna manera IONIC no entiende google.
-declare var google;
-
+@IonicPage()
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
 })
 export class HomePage {
-@ViewChild('map') mapElement;
-map:any;
-imgsource : any; 
-restaurante : Restaurante;
+
+  preferencelist:Preferences;
 
   constructor(
-    public navCtrl: NavController,
-    public auth : AuthProvider,
-    public alertCtrl : AlertController,
-    public toastCtrl: ToastController,
-    private imageSrv: ImageProvider,
-    public zone: NgZone,
-    public afd: AngularFireDatabase,
-    public resSer: RestauranteProvider
-  ) {
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public share: SharedataProvider) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
    
   }
 
-  ionViewDidLoad(){
-    this.initMap();
-    
-  }
-
   ionViewDidEnter(){
-
-    let uid=this.auth.getId;
-    let storageRef = firebase.storage().ref();
-    let imageRef = storageRef.child('logos/'+uid+'.JPG');
-    imageRef.getDownloadURL().then(function(urls){
-      let source = document.getElementById('foto');
-      source.setAttribute('src',urls);
-    });
-    
-  }
-  //Función con la información para inicializar un mapa. Se puede configurar la latitud y longitud
-  initMap(){
-    //Aquí se ponen las coordenadas!!!!
-    let latLng = new google.maps.LatLng(40.4233873,-3.6927541);
-    
-    let mapOptions = {
-      center:latLng,
-      zoom:15,
-      MapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-  }
-
-  cerrarSesion(){
-    this.auth.logout();
+    this.preferencelist=this.share.getPreferences();
+    console.log('Vegetarian is: '+this.preferencelist.vegetarian);
   }
 
 }

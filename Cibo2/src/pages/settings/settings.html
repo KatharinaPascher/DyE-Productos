@@ -1,0 +1,112 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+      <ion-list-header>Distance (Km)</ion-list-header>
+      
+      <ion-item>
+          <ion-range min="0" max="150" [(ngModel)]="distance" color="danger" pin="true">
+              <ion-label range-left>0</ion-label>
+              <ion-label range-right>150</ion-label>
+            </ion-range>
+      </ion-item>
+  
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>Price (€)</ion-list-header>
+      
+      <ion-item>
+        <ion-range min="0" max="200" [(ngModel)]="price" color="secondary" pin="true">
+            <ion-label range-left>0</ion-label>
+            <ion-label range-right>200</ion-label>
+        </ion-range>
+      </ion-item>
+  
+  </ion-list>
+     
+  <ion-list>
+    
+    <ion-list-header>Kind of food</ion-list-header>
+  
+      <ion-item>
+        <ion-label>Mediterranean</ion-label>
+        <ion-checkbox color="dark" 
+        [(ngModel)]="pref.mediterranean"
+        (ionChange)="update()"></ion-checkbox>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Asian</ion-label>
+        <ion-checkbox color="blue" 
+        [(ngModel)]="pref.asian"
+        (ionChange)="update()"></ion-checkbox>
+      </ion-item>
+
+  
+      <ion-item>    
+        <ion-label>Tex-Mex</ion-label>   
+        <ion-checkbox color="yellow" 
+        [(ngModel)]="pref.texmex"
+        (ionChange)="update()"></ion-checkbox>   
+      </ion-item>
+    
+      <ion-item>  
+        <ion-label>Italian</ion-label>  
+        <ion-checkbox color="danger" checked="false"
+        [(ngModel)]="pref.italian"
+        (ionChange)="update()"></ion-checkbox>   
+      </ion-item>
+  
+      <ion-item>     
+        <ion-label>Fast Food</ion-label>     
+        <ion-checkbox color="danger" 
+        [(ngModel)]="pref.fastfood"
+        (ionChange)="update()"></ion-checkbox>     
+      </ion-item>
+
+  </ion-list> 
+
+  <ion-list>
+    
+      <ion-list-header>Allergies & Preferences</ion-list-header>
+  
+        <ion-item>   
+          <ion-label>Vegan</ion-label>     
+          <ion-checkbox color="royal" 
+          [(ngModel)]="pref.vegan"
+          (ionChange)="update()"></ion-checkbox>  
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Gluten Free</ion-label>
+          <ion-checkbox color="secondary" 
+          [(ngModel)]="pref.glutenfree"
+          (ionChange)="update()"></ion-checkbox>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Vegetarian</ion-label>
+          <ion-checkbox color="danger" 
+          [(ngModel)]="pref.vegetarian"
+          (ionChange)="update()"></ion-checkbox>
+        </ion-item>
+  
+    </ion-list> 
+
+    <ion-list>
+      <button logout ion-item (click)="cerrarSesion()">
+        <ion-icon name="exit" color="danger" item-start></ion-icon>
+        Cerrar Sesión
+      </button>
+    </ion-list>
+
+</ion-content>

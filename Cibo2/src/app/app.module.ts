@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
-import { FoodListPage } from '../pages/food-list/food-list';
-import { AddFoodPage } from '../pages/add-food/add-food';
+import { SettingsPage} from '../pages/settings/settings';
+import { RestaurantPage} from '../pages/restaurant/restaurant';
+import { FavsPage} from '../pages/favs/favs';
+import { HomePage} from '../pages/home/home';
 
 import { LoginPageModule } from '../pages/login/login.module';
 
@@ -24,7 +25,10 @@ import { RegisterPage } from '../pages/register/register';
 import { Camera} from '@ionic-native/camera';
 import { ImageProvider } from '../providers/image/image';
 import { FotoProvider } from '../providers/foto/foto';
+
+//Providers
 import { RestauranteProvider } from '../providers/restaurante/restaurante';
+import { SharedataProvider } from '../providers/sharedata/sharedata';
 
 /** constante firebaseConfig con la información de nuestro api de firebase */
 export const firebaseConfig = {
@@ -39,12 +43,13 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    SettingsPage,
     TabsPage,
     LoginPage,
     RegisterPage,
-    AddFoodPage,
-    FoodListPage
+    RestaurantPage,
+    FavsPage,
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -56,12 +61,13 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    SettingsPage,
     TabsPage,
     LoginPage,
-    AddFoodPage,
-    FoodListPage,
-    RegisterPage
+    RegisterPage,
+    RestaurantPage,
+    HomePage,
+    FavsPage
   ],
   providers: [
     StatusBar,
@@ -71,7 +77,8 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ImageProvider,
     FotoProvider,
-    RestauranteProvider
+    RestauranteProvider,
+    SharedataProvider
   ]
 })
 export class AppModule {}
