@@ -33,19 +33,17 @@ export class RestaurantPage {
       imageRef.getDownloadURL().then(function(urls){
         let source = document.getElementById('foto-restaurante');
         source.setAttribute('src',urls);
-
-        
     });
   }
 
   ionViewDidLoad() {
-    this.initMap();
+    this.initMap2();
   }
 
   //Función con la información para inicializar un mapa. Se puede configurar la latitud y longitud
-  initMap(){
+  initMap2(){
     //Aquí se ponen las coordenadas!!!!
-    let latLng = new google.maps.LatLng(23.3423,-3.444)//;this.rest.lat,this.rest.long);
+    let latLng = new google.maps.LatLng(this.rest.lat,this.rest.long);
     
     let mapOptions = {
       center:latLng,
