@@ -1,12 +1,13 @@
 .position-dislikeandlike-img-home{
-    padding-top: 5%;
-    margin-left: 5%;
+    margin-top: auto;
+    margin-left: auto;
 }
 
 .position-dislikeandlike-button-home{
-    padding: 70px 1px;
-    border-radius: 10px;
-    
+    padding: 60px 1px;
+    border-radius: 20px;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .position-card-home{
@@ -14,12 +15,19 @@
     margin-right: auto;
     width: 100%;
     height: 55%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 20px;
 }
 
 .position-image-home{
     width: 100%;
     height: 100%;
+
 }
 
-
+.background-beige{
+    background: url('../assets/imgs/Background-wood.jpg');
+    width: 100%;
+    background-size: 100% 100%;
+}
 
