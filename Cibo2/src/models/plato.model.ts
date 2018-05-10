@@ -1,7 +1,5 @@
 export class Plato {
     
-    name:string;
-
     vegan:boolean;
     glutenfree:boolean; 
     vegetarian:boolean;
@@ -16,8 +14,7 @@ export class Plato {
     distancia:number;
     
     fotoid:string;
-    platoid:string;
-    restauranteid:string;
+    restauranteid:number;
 
     constructor(){
         

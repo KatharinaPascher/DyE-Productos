@@ -8,8 +8,6 @@ export class Restaurante {
     fotoid:string;
     lat: number;
     long: number;
-    distancia: number;
-    restauranteid: string;
 
     constructor(){
 

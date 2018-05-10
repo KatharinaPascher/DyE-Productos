@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MapType } from '@angular/compiler/src/output/output_ast';
+import { Restaurante } from '../../models/restaurante.model';
+import firebase from 'firebase';
 
 /**
  * Generated class for the RestaurantPage page.
@@ -18,20 +20,32 @@ declare var google;
 export class RestaurantPage {
   @ViewChild('map') mapElement;
   map:any;
+  rest:Restaurante;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams
     ) {
+
+      this.rest = this.navParams.data;
+      let storageRef = firebase.storage().ref();
+      let imageRef = storageRef.child('logos/'+this.rest.fotoid);
+     
+      imageRef.getDownloadURL().then(function(urls){
+        let source = document.getElementById('foto-restaurante');
+        source.setAttribute('src',urls);
+
+        
+    });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RestaurantPage');
+    this.initMap();
   }
 
   //Función con la información para inicializar un mapa. Se puede configurar la latitud y longitud
   initMap(){
     //Aquí se ponen las coordenadas!!!!
-    let latLng = new google.maps.LatLng(40.4233873,-3.6927541);
+    let latLng = new google.maps.LatLng(23.3423,-3.444)//;this.rest.lat,this.rest.long);
     
     let mapOptions = {
       center:latLng,

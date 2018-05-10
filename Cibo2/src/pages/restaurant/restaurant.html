@@ -1,23 +1,23 @@
 <ion-content>
     <ion-card>
 
-      <img id='foto' src={{urls}}/>
+      <img id='foto-restaurante'/>
 
       <ion-card-content>
-        <ion-card-title>Nombre</ion-card-title>
-        <p>Descrip</p>
-        <p>Calle del TAl 4545</p>
+        <ion-card-title>{{rest.nombre}}</ion-card-title>
+        <p>{{rest.descripcion}}</p>
+        <p>{{rest.direccion}}</p>
       </ion-card-content>
 
       <ion-item>
         <ion-icon name='at' item-start style="color: #d03e84">
         </ion-icon>
-        <ion-badge item-end>www.www.com</ion-badge>
+        <ion-badge item-end>{{rest.sitioweb}}</ion-badge>
       </ion-item>
 
       <ion-item>
           <ion-icon name='call' item-start style="color: #55acee"></ion-icon>
-          <ion-badge item-end>5557878888</ion-badge>
+          <ion-badge item-end>{{rest.telefono}}</ion-badge>
       </ion-item>  
     </ion-card>
 

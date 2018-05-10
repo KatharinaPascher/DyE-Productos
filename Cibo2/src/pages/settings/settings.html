@@ -1,15 +1,23 @@
-<ion-header >
-  
-</ion-header>
-
-
 <ion-content padding>
+
+    <ion-list>
+        <ion-list-header>Distance (Km)</ion-list-header>
+  
+        <ion-item>
+            <ion-range min="0" max="150" [(ngModel)]="pref.distance" color="danger" pin="true"
+            (ionChange)="update()">
+                <ion-label range-left>0</ion-label>
+                <ion-label range-right>150</ion-label>
+              </ion-range>
+        </ion-item>
+    </ion-list>
 
   <ion-list>
       <ion-list-header>Price (€)</ion-list-header>
       
       <ion-item>
-        <ion-range min="0" max="200" [(ngModel)]="price" color="secondary" pin="true">
+        <ion-range min="0" max="200" [(ngModel)]="pref.price" color="secondary" pin="true"
+        (ionChange)="update()">
             <ion-label range-left>0</ion-label>
             <ion-label range-right>200</ion-label>
         </ion-range>
