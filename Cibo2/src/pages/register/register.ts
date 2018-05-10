@@ -22,17 +22,6 @@ export class RegisterPage {
 
   /**Registro con correo y contraseña */
   user= { email : '', password : ''};
-  restaurante: Restaurante = {
-    nombre: '',
-    descripcion: '',
-    telefono: '',
-    correo: '',
-    sitioweb: '',
-    direccion:'',
-    foto_id:'',
-    lat: '',
-    long: '',
-    user:''};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public auth : AuthProvider,
@@ -50,37 +39,7 @@ export class RegisterPage {
 
   // Registro de usuario
   register(){
-    this.auth.registerUser(this.user.email,this.user.password)
-    .then((user) => {
-      // El usuario se ha creado correctamente
-
-      let toast = this.toastCtrl.create({
-        message: 'Usuario '+this.user.email+' creado',
-        duration: 1000,
-        position: 'middle'
-      });
     
-      toast.present();
-
-      this.restaurante.user=this.auth.getId;
-
-      this.resProvider.addRestaurante(this.restaurante).then(ref => {
-        this.toastCtrl.create({
-          message: 'creado',
-          duration: 1000,
-          position: 'middle'
-        });
-      });
-    })
-    .catch(err=>{
-      let alert = this.alertCtrl.create({
-        title: 'Error',
-        subTitle: err.message,
-        buttons: ['Aceptar']
-      });
-      alert.present();
-    })
-
     }
     //Crear registro de restaurante
 }

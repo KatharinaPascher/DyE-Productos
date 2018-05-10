@@ -13,10 +13,11 @@ export class Plato {
     mediterranean:boolean;
 
     price:number;
-
+    distancia:number;
+    
     fotoid:string;
     platoid:string;
-    restauranteid;
+    restauranteid:string;
 
     constructor(){
         

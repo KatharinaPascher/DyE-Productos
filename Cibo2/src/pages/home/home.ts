@@ -15,8 +15,14 @@ import firebase from 'firebase';
 export class HomePage {
 
   preferencelist:Preferences;
-  restauranteslist:Restaurante[]=new Restaurante()[5];
-  platoslist:Plato[]=new Plato()[25];
+  //5 restaurantes
+  restauranteslist:Restaurante[]=[new Restaurante(),new Restaurante(),
+    new Restaurante(),new Restaurante(),new Restaurante()];
+  //20 platos
+  platoslist:Plato[]=[new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato()
+    ,new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
+    new Plato(),new Plato()
+    ,new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato()];
   favslist:Favs[];
 
   actual:number=0;
@@ -33,9 +39,10 @@ export class HomePage {
       this.platoslist[0].vegan=false;this.platoslist[0].vegetarian=false;
       this.platoslist[0].glutenfree=false;
       this.platoslist[0].price=12;
-      this.platoslist[0].fotoid='40c12ffe-0bde-3df5-3853-b031d0cda23f.jpg ';
+      this.platoslist[0].distancia=122;
+      this.platoslist[0].fotoid='40c12ffe-0bde-3df5-3853-b031d0cda23f.jpg';
 
-      this.updatePhoto(this.platoslist[this.actual].fotoid);
+      this.updatePhoto(this.platoslist[0].fotoid);
   }
 
   ionViewDidLoad() {
