@@ -37,7 +37,10 @@ export class RestaurantPage {
   }
 
   ionViewDidLoad() {
+<<<<<<< HEAD
     
+=======
+>>>>>>> f6fc193daba89014ad2a2c4dc3dd35a0351f2186
   }
 
   //Función con la información para inicializar un mapa. Se puede configurar la latitud y longitud
