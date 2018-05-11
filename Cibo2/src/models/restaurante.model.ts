@@ -1,4 +1,5 @@
 export class Restaurante {
+    
     nombre: string; 
     descripcion: string; 
     telefono: string; 
@@ -10,6 +11,5 @@ export class Restaurante {
     long: number;
 
     constructor(){
-
     }
 }

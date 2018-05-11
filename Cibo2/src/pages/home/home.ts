@@ -6,6 +6,9 @@ import { Favs } from '../../models/favs.model';
 import { Restaurante } from '../../models/restaurante.model';
 import { Plato } from '../../models/plato.model';
 import { RestaurantPage } from '../../pages/restaurant/restaurant';
+import { SharedatafotoProvider } from '../../providers/sharedatafoto/sharedatafoto';
+import { SharefavsProvider } from '../../providers/sharefavs/sharefavs';
+
 import firebase from 'firebase';
 
 @IonicPage()
@@ -16,7 +19,7 @@ import firebase from 'firebase';
 export class HomePage {
 
   preferencelist:Preferences;
-  //5 restaurantes
+  //6 restaurantes
   restauranteslist:Restaurante[]=[new Restaurante(),new Restaurante(),
     new Restaurante(),new Restaurante(),new Restaurante(),new Restaurante()];
   //17 platos
@@ -26,12 +29,17 @@ export class HomePage {
   favslist:Favs[];
 
   actual:number=0;
+  total=this.platoslist.length-1;  
+  favori:number[];
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public share: SharedataProvider) {
+    public share: SharedataProvider,
+    public sharefoto: SharedatafotoProvider,
+    public sharefav: SharefavsProvider) {
 
+      this.preferencelist=this.share.getPreferences();
       /**Gran parte de código dedicada a precargar datos */
 
       /**Restaurantes*/
@@ -94,7 +102,6 @@ export class HomePage {
       this.restauranteslist[5].lat=40.450045;
       this.restauranteslist[5].long=-3.698157;
       this.restauranteslist[5].fotoid="006.JPG";
-
 
       /**Platos */
       this.platoslist[0].asian=false;
@@ -335,6 +342,7 @@ export class HomePage {
       this.platoslist[16].restauranteid=2;
       this.platoslist[16].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC017.JPG?alt=media&token=7ad584c8-85a9-4501-8938-8b6ed0661ae0";
 
+      this.sharefoto.setPlatos(this.platoslist);
       this.updatePhoto(this.platoslist[this.actual].fotoid);
   }
 
@@ -342,14 +350,15 @@ export class HomePage {
    
   }
 
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     this.preferencelist=this.share.getPreferences();
-    console.log('Vegetarian is: '+this.preferencelist.vegetarian);
   }
 
   updatePhoto(id:string){
+
     let storageRef = firebase.storage().ref();
     let imageRef = storageRef.child('fotosComidas/'+id);
+    
     imageRef.getDownloadURL().then(function(urls){
       let source = document.getElementById('foto-plato');
       source.setAttribute('src',urls);
@@ -357,14 +366,52 @@ export class HomePage {
   }
 
   onLike(){
-    this.navCtrl.push(RestaurantPage, 
-    this.restauranteslist[this.platoslist[this.actual].restauranteid]);
+
+    if(this.actual<this.total){  
+      console.log('I: '+this.actual);
+
+      let source = document.getElementById('foto-plato');
+      source.setAttribute('src',' ');
+
+      this.navCtrl.push(RestaurantPage, 
+      this.restauranteslist[this.platoslist[this.actual].restauranteid]);
+
+      this.actual++;
+      this.updatePhoto(this.platoslist[this.actual].fotoid);
+
+    }else{
+      console.log('FINISH: '+this.actual);
+      let source = document.getElementById('foto-plato');
+      source.setAttribute('src','../../assets/imgs/NoMore.JPG');
+    }
   }
 
   onDislike(){
-    let source = document.getElementById('foto-plato');
+    
+    if(this.actual<this.total){  
+      console.log('I: '+this.actual);
+
+      let source = document.getElementById('foto-plato');
       source.setAttribute('src',' ');
-    this.actual++;
-    this.updatePhoto(this.platoslist[this.actual].fotoid);
+
+      this.actual++;
+      this.updatePhoto(this.platoslist[this.actual].fotoid);
+      
+    }else{
+      let source = document.getElementById('foto-plato');
+      source.setAttribute('src','../../assets/imgs/NoMore.JPG');
+    }
+
+  }
+
+  filter(){
+    
+    for (let entry of this.platoslist) {
+      if(entry.distancia<this.preferencelist.distance){
+           break; 
+         } else {
+           if(this.actual<1) this.actual++;
+        }   
+    }
   }
 }
