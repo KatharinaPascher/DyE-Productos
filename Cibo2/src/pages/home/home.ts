@@ -6,6 +6,7 @@ import { Favs } from '../../models/favs.model';
 import { Restaurante } from '../../models/restaurante.model';
 import { Plato } from '../../models/plato.model';
 import { RestaurantPage } from '../../pages/restaurant/restaurant';
+
 import firebase from 'firebase';
 
 @IonicPage()
@@ -24,7 +25,6 @@ export class HomePage {
                       new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
                       new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
                       new Plato(),new Plato()];
-  favslist:number[]=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 
   actual:number=0;
 
@@ -33,6 +33,7 @@ export class HomePage {
     public navParams: NavParams,
     public share: SharedataProvider) {
 
+      this.preferencelist=this.share.getPreferences();
       /**Gran parte de código dedicada a precargar datos */
 
       /**Restaurantes*/
@@ -52,46 +53,20 @@ export class HomePage {
       this.platoslist[0].texmex=false;
       this.platoslist[0].vegan=false;this.platoslist[0].vegetarian=false;
       this.platoslist[0].glutenfree=false;
-      this.platoslist[0].price=12;this.platoslist[0].distancia=122;
-      this.platoslist[0].fotoid='C001.png';
+      this.platoslist[0].price=30;this.platoslist[0].distancia=122;
+      this.platoslist[0].fotoid='cb6e42f1-3fdb-2fd1-2914-bf28a3fb0819.jpg';
       this.platoslist[0].restauranteid=0;
 
-      this.platoslist[1].asian=false;this.platoslist[1].fastfood=false;
+      this.platoslist[1].asian=true;this.platoslist[1].fastfood=false;
       this.platoslist[1].italian=false;this.platoslist[1].mediterranean=false;
       this.platoslist[1].texmex=false;
       this.platoslist[1].vegan=false;this.platoslist[1].vegetarian=false;
       this.platoslist[1].glutenfree=false;
-      this.platoslist[1].price=12;this.platoslist[1].distancia=122;
+      this.platoslist[1].price=12;this.platoslist[1].distancia=90;
       this.platoslist[1].fotoid='d11638f6-e740-ff78-1992-980393042f48.jpg';
       this.platoslist[1].restauranteid=0;
 
-      this.platoslist[2].asian=false;this.platoslist[2].fastfood=false;
-      this.platoslist[2].italian=false;this.platoslist[2].mediterranean=false;
-      this.platoslist[2].texmex=false;
-      this.platoslist[2].vegan=false;this.platoslist[2].vegetarian=false;
-      this.platoslist[2].glutenfree=false;
-      this.platoslist[2].price=22;this.platoslist[2].distancia=122;
-      this.platoslist[2].fotoid='d11638f6-e740-ff78-1992-980393042f48.jpg';
-      this.platoslist[2].restauranteid=0;
-
-      this.platoslist[3].asian=false;this.platoslist[3].fastfood=false;
-      this.platoslist[3].italian=false;this.platoslist[3].mediterranean=false;
-      this.platoslist[3].texmex=false;
-      this.platoslist[3].vegan=false;this.platoslist[3].vegetarian=false;
-      this.platoslist[3].glutenfree=false;
-      this.platoslist[3].price=12;this.platoslist[1].distancia=122;
-      this.platoslist[3].fotoid='d11638f6-e740-ff78-1992-980393042f48.jpg';
-      this.platoslist[3].restauranteid=0;
-
-      this.platoslist[4].asian=false;this.platoslist[1].fastfood=false;
-      this.platoslist[4].italian=false;this.platoslist[1].mediterranean=false;
-      this.platoslist[4].texmex=false;
-      this.platoslist[4].vegan=false;this.platoslist[1].vegetarian=false;
-      this.platoslist[4].glutenfree=false;
-      this.platoslist[4].price=12;this.platoslist[1].distancia=122;
-      this.platoslist[4].fotoid='d11638f6-e740-ff78-1992-980393042f48.jpg';
-      this.platoslist[4].restauranteid=0;
-
+      //this.filter();
       this.updatePhoto(this.platoslist[this.actual].fotoid);
   }
 
@@ -99,12 +74,12 @@ export class HomePage {
    
   }
 
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     this.preferencelist=this.share.getPreferences();
-    console.log('Vegetarian is: '+this.preferencelist.vegetarian);
   }
 
   updatePhoto(id:string){
+
     let storageRef = firebase.storage().ref();
     let imageRef = storageRef.child('fotosComidas/'+id);
     imageRef.getDownloadURL().then(function(urls){
@@ -117,8 +92,9 @@ export class HomePage {
     this.navCtrl.push(RestaurantPage, 
     this.restauranteslist[this.platoslist[this.actual].restauranteid]);
     
-    if(this.actual<20) this.actual++;
+    if(this.actual<1) this.actual++;
 
+    this.filter();
     this.updatePhoto(this.platoslist[this.actual].fotoid);
   }
 
@@ -126,7 +102,20 @@ export class HomePage {
     let source = document.getElementById('foto-plato');
       source.setAttribute('src',' ');
     
-    if(this.actual<20)  this.actual++;
+    if(this.actual<1)  this.actual++;
+
+    this.filter();
     this.updatePhoto(this.platoslist[this.actual].fotoid);
+  }
+
+  filter(){
+    
+    for (let entry of this.platoslist) {
+      if(entry.distancia<this.preferencelist.distance){
+           break; 
+         } else {
+           if(this.actual<1) this.actual++;
+          }   
+    }
   }
 }
