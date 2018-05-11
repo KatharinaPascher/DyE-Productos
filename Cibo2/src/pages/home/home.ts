@@ -24,7 +24,7 @@ export class HomePage {
                       new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
                       new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
                       new Plato(),new Plato()];
-  favslist:Favs[];
+  favslist:number[]=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 
   actual:number=0;
 
@@ -53,7 +53,7 @@ export class HomePage {
       this.platoslist[0].vegan=false;this.platoslist[0].vegetarian=false;
       this.platoslist[0].glutenfree=false;
       this.platoslist[0].price=12;this.platoslist[0].distancia=122;
-      this.platoslist[0].fotoid='40c12ffe-0bde-3df5-3853-b031d0cda23f.jpg';
+      this.platoslist[0].fotoid='C001.png';
       this.platoslist[0].restauranteid=0;
 
       this.platoslist[1].asian=false;this.platoslist[1].fastfood=false;
@@ -116,12 +116,17 @@ export class HomePage {
   onLike(){
     this.navCtrl.push(RestaurantPage, 
     this.restauranteslist[this.platoslist[this.actual].restauranteid]);
+    
+    if(this.actual<20) this.actual++;
+
+    this.updatePhoto(this.platoslist[this.actual].fotoid);
   }
 
   onDislike(){
     let source = document.getElementById('foto-plato');
       source.setAttribute('src',' ');
-    this.actual++;
+    
+    if(this.actual<20)  this.actual++;
     this.updatePhoto(this.platoslist[this.actual].fotoid);
   }
 }
