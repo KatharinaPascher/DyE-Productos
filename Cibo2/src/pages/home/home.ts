@@ -18,12 +18,11 @@ export class HomePage {
   preferencelist:Preferences;
   //5 restaurantes
   restauranteslist:Restaurante[]=[new Restaurante(),new Restaurante(),
-    new Restaurante(),new Restaurante(),new Restaurante()];
-  //20 platos
+    new Restaurante(),new Restaurante(),new Restaurante(),new Restaurante()];
+  //17 platos
   platoslist:Plato[]=[new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
                       new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
-                      new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
-                      new Plato(),new Plato()];
+                      new Plato(),new Plato(),new Plato(),new Plato(),new Plato()];
   favslist:Favs[];
 
   actual:number=0;
@@ -110,6 +109,7 @@ export class HomePage {
       this.platoslist[0].distancia=100;
       this.platoslist[0].fotoid='C001.JPG';
       this.platoslist[0].restauranteid=0;
+      this.platoslist[0].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC001.JPG?alt=media&token=337fcc70-d068-4b1e-ade3-71b35fa6c898";
 
       this.platoslist[1].asian=true;
       this.platoslist[1].fastfood=false;
@@ -123,6 +123,7 @@ export class HomePage {
       this.platoslist[1].distancia=150;
       this.platoslist[1].fotoid='C002.JPG';
       this.platoslist[1].restauranteid=1;
+      this.platoslist[1].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC002.JPG?alt=media&token=a77f954b-5d70-41d4-8eda-802ac20dde50";
 
       this.platoslist[2].asian=false;
       this.platoslist[2].fastfood=false;
@@ -136,6 +137,7 @@ export class HomePage {
       this.platoslist[2].distancia=200;
       this.platoslist[2].fotoid='C003.JPG';
       this.platoslist[2].restauranteid=2;
+      this.platoslist[2].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC003.JPG?alt=media&token=02b3e0b0-28e8-404b-818a-53bcde24be73";
 
       this.platoslist[3].asian=true;
       this.platoslist[3].fastfood=false;
@@ -149,6 +151,7 @@ export class HomePage {
       this.platoslist[3].distancia=50;
       this.platoslist[3].fotoid='C004.JPG';
       this.platoslist[3].restauranteid=3;
+      this.platoslist[3].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC004.JPG?alt=media&token=d1b94771-bd56-4123-905d-87a287ab68a4";
 
       this.platoslist[4].asian=false;
       this.platoslist[4].fastfood=true;
@@ -162,6 +165,7 @@ export class HomePage {
       this.platoslist[4].distancia=70;
       this.platoslist[4].fotoid='C005.JPG';
       this.platoslist[4].restauranteid=4;
+      this.platoslist[4].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC005.JPG?alt=media&token=28d4f124-b486-485c-a8da-7ce6a50a27bd";
 
       this.platoslist[5].asian=false;
       this.platoslist[5].fastfood=false;
@@ -175,6 +179,7 @@ export class HomePage {
       this.platoslist[5].distancia=40;
       this.platoslist[5].fotoid='C006.JPG';
       this.platoslist[5].restauranteid=5;
+      this.platoslist[5].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC006.JPG?alt=media&token=38f49cbd-5944-431c-b37a-0b61775316fb";
 
       this.platoslist[6].asian=false;
       this.platoslist[6].fastfood=false;
@@ -188,6 +193,7 @@ export class HomePage {
       this.platoslist[6].distancia=40;
       this.platoslist[6].fotoid='C007.JPG';
       this.platoslist[6].restauranteid=5;
+      this.platoslist[6].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC007.JPG?alt=media&token=7a9ac680-8fba-4f66-b670-eae9fa3e0224";
 
       this.platoslist[7].asian=false;
       this.platoslist[7].fastfood=true;
@@ -201,6 +207,7 @@ export class HomePage {
       this.platoslist[7].distancia=200;
       this.platoslist[7].fotoid='C008.JPG';
       this.platoslist[7].restauranteid=2;
+      this.platoslist[7].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC008.JPG?alt=media&token=5f7dafd7-b86a-4a87-9f73-d2cab96d543e";
 
       this.platoslist[8].asian=false;
       this.platoslist[8].fastfood=false;
@@ -214,19 +221,7 @@ export class HomePage {
       this.platoslist[8].distancia=100;
       this.platoslist[8].fotoid='C009.JPG';
       this.platoslist[8].restauranteid=0;
-
-      this.platoslist[8].asian=false;
-      this.platoslist[8].fastfood=false;
-      this.platoslist[8].italian=false;
-      this.platoslist[8].mediterranean=true;
-      this.platoslist[8].texmex=false;
-      this.platoslist[8].vegan=false;
-      this.platoslist[8].vegetarian=true;
-      this.platoslist[8].glutenfree=true;
-      this.platoslist[8].price=15;
-      this.platoslist[8].distancia=70;
-      this.platoslist[8].fotoid='C009.JPG';
-      this.platoslist[8].restauranteid=4;
+      this.platoslist[8].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC009.JPG?alt=media&token=b56b823c-013c-4abd-9c9d-2411a0a40737";
 
       this.platoslist[9].asian=false;
       this.platoslist[9].fastfood=false;
@@ -240,6 +235,7 @@ export class HomePage {
       this.platoslist[9].distancia=40;
       this.platoslist[9].fotoid='C010.JPG';
       this.platoslist[9].restauranteid=5;
+      this.platoslist[9].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC010.JPG?alt=media&token=502c5b4d-668e-41c4-a2da-f9f11f4a64dd";
 
       this.platoslist[10].asian=true;
       this.platoslist[10].fastfood=false;
@@ -253,6 +249,7 @@ export class HomePage {
       this.platoslist[10].distancia=50;
       this.platoslist[10].fotoid='C011.JPG';
       this.platoslist[10].restauranteid=3;
+      this.platoslist[10].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC011.JPG?alt=media&token=175c27b1-cbb5-4c98-859e-8c9db636f0e9";
 
       this.platoslist[11].asian=false;
       this.platoslist[11].fastfood=false;
@@ -266,6 +263,7 @@ export class HomePage {
       this.platoslist[11].distancia=70;
       this.platoslist[11].fotoid='C012.JPG';
       this.platoslist[11].restauranteid=4;
+      this.platoslist[11].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC012.JPG?alt=media&token=da5968ec-352c-4569-9735-cb56cea0cff9";
 
       this.platoslist[12].asian=true;
       this.platoslist[12].fastfood=false;
@@ -279,6 +277,7 @@ export class HomePage {
       this.platoslist[12].distancia=150;
       this.platoslist[12].fotoid='C013.JPG';
       this.platoslist[12].restauranteid=1;
+      this.platoslist[12].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC013.JPG?alt=media&token=7c1e5bd2-db02-4066-aefe-3bb12bca81e1";
 
       this.platoslist[13].asian=true;
       this.platoslist[13].fastfood=false;
@@ -292,6 +291,7 @@ export class HomePage {
       this.platoslist[13].distancia=50;
       this.platoslist[13].fotoid='C014.JPG';
       this.platoslist[13].restauranteid=3;
+      this.platoslist[13].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC014.JPG?alt=media&token=d78ba93c-7f0e-4057-b39f-5bd9ff73b071";
 
       this.platoslist[14].asian=false;
       this.platoslist[14].fastfood=true;
@@ -305,6 +305,7 @@ export class HomePage {
       this.platoslist[14].distancia=70;
       this.platoslist[14].fotoid='C015.JPG';
       this.platoslist[14].restauranteid=4;
+      this.platoslist[14].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC015.JPG?alt=media&token=04d3419b-1f70-45e0-88e8-33d4d7c57c06";
 
       this.platoslist[15].asian=false;
       this.platoslist[15].fastfood=true;
@@ -318,6 +319,7 @@ export class HomePage {
       this.platoslist[15].distancia=40;
       this.platoslist[15].fotoid='C016.JPG';
       this.platoslist[15].restauranteid=5;
+      this.platoslist[15].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC016.JPG?alt=media&token=82084f9a-24d4-49e9-8a07-43c871dbab15";
 
       this.platoslist[16].asian=false;
       this.platoslist[16].fastfood=true;
@@ -331,6 +333,7 @@ export class HomePage {
       this.platoslist[16].distancia=200;
       this.platoslist[16].fotoid='C017.JPG';
       this.platoslist[16].restauranteid=2;
+      this.platoslist[16].fotourl="https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC017.JPG?alt=media&token=7ad584c8-85a9-4501-8938-8b6ed0661ae0";
 
       this.updatePhoto(this.platoslist[this.actual].fotoid);
   }
