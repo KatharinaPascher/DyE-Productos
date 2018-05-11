@@ -6,6 +6,8 @@ import { Favs } from '../../models/favs.model';
 import { Restaurante } from '../../models/restaurante.model';
 import { Plato } from '../../models/plato.model';
 import { RestaurantPage } from '../../pages/restaurant/restaurant';
+import { SharedatafotoProvider } from '../../providers/sharedatafoto/sharedatafoto';
+import { SharefavsProvider } from '../../providers/sharefavs/sharefavs';
 
 import firebase from 'firebase';
 
@@ -17,21 +19,24 @@ import firebase from 'firebase';
 export class HomePage {
 
   preferencelist:Preferences;
-  //5 restaurantes
+  //6 restaurantes
   restauranteslist:Restaurante[]=[new Restaurante(),new Restaurante(),
-    new Restaurante(),new Restaurante(),new Restaurante()];
+    new Restaurante(),new Restaurante(),new Restaurante(),new Restaurante()];
   //20 platos
   platoslist:Plato[]=[new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
                       new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
-                      new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
-                      new Plato(),new Plato()];
+                      new Plato(),new Plato(),new Plato(),new Plato(),new Plato()];
 
   actual:number=0;
+  total=this.platoslist.length-1;  
+  favori:number[];
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public share: SharedataProvider) {
+    public share: SharedataProvider,
+    public sharefoto: SharedatafotoProvider,
+    public sharefav: SharefavsProvider) {
 
       this.preferencelist=this.share.getPreferences();
       /**Gran parte de código dedicada a precargar datos */
@@ -97,7 +102,6 @@ export class HomePage {
       this.restauranteslist[5].long=-3.698157;
       this.restauranteslist[5].fotoid="006.JPG";
 
-
       /**Platos */
       this.platoslist[0].asian=false;
       this.platoslist[0].fastfood=false;
@@ -107,14 +111,6 @@ export class HomePage {
       this.platoslist[0].vegan=false;
       this.platoslist[0].vegetarian=true;
       this.platoslist[0].glutenfree=false;
-<<<<<<< HEAD
-      this.platoslist[0].price=30;this.platoslist[0].distancia=122;
-      this.platoslist[0].fotoid='cb6e42f1-3fdb-2fd1-2914-bf28a3fb0819.jpg';
-      this.platoslist[0].restauranteid=0;
-
-      this.platoslist[1].asian=true;this.platoslist[1].fastfood=false;
-      this.platoslist[1].italian=false;this.platoslist[1].mediterranean=false;
-=======
       this.platoslist[0].price=10;
       this.platoslist[0].distancia=100;
       this.platoslist[0].fotoid='C001.JPG';
@@ -124,18 +120,10 @@ export class HomePage {
       this.platoslist[1].fastfood=false;
       this.platoslist[1].italian=false;
       this.platoslist[1].mediterranean=false;
->>>>>>> f6fc193daba89014ad2a2c4dc3dd35a0351f2186
       this.platoslist[1].texmex=false;
       this.platoslist[1].vegan=false;
       this.platoslist[1].vegetarian=false;
       this.platoslist[1].glutenfree=false;
-<<<<<<< HEAD
-      this.platoslist[1].price=12;this.platoslist[1].distancia=90;
-      this.platoslist[1].fotoid='d11638f6-e740-ff78-1992-980393042f48.jpg';
-      this.platoslist[1].restauranteid=0;
-
-      //this.filter();
-=======
       this.platoslist[1].price=10;
       this.platoslist[1].distancia=150;
       this.platoslist[1].fotoid='C002.JPG';
@@ -231,19 +219,6 @@ export class HomePage {
       this.platoslist[8].distancia=100;
       this.platoslist[8].fotoid='C009.JPG';
       this.platoslist[8].restauranteid=0;
-
-      this.platoslist[8].asian=false;
-      this.platoslist[8].fastfood=false;
-      this.platoslist[8].italian=false;
-      this.platoslist[8].mediterranean=true;
-      this.platoslist[8].texmex=false;
-      this.platoslist[8].vegan=false;
-      this.platoslist[8].vegetarian=true;
-      this.platoslist[8].glutenfree=true;
-      this.platoslist[8].price=15;
-      this.platoslist[8].distancia=70;
-      this.platoslist[8].fotoid='C009.JPG';
-      this.platoslist[8].restauranteid=4;
 
       this.platoslist[9].asian=false;
       this.platoslist[9].fastfood=false;
@@ -349,7 +324,7 @@ export class HomePage {
       this.platoslist[16].fotoid='C017.JPG';
       this.platoslist[16].restauranteid=2;
 
->>>>>>> f6fc193daba89014ad2a2c4dc3dd35a0351f2186
+      this.sharefoto.setPlatos(this.platoslist);
       this.updatePhoto(this.platoslist[this.actual].fotoid);
   }
 
@@ -372,23 +347,42 @@ export class HomePage {
   }
 
   onLike(){
-    this.navCtrl.push(RestaurantPage, 
-    this.restauranteslist[this.platoslist[this.actual].restauranteid]);
-    
-    if(this.actual<1) this.actual++;
 
-    this.filter();
-    this.updatePhoto(this.platoslist[this.actual].fotoid);
+    if(this.actual<this.total){  
+      console.log('I: '+this.actual);
+
+      let source = document.getElementById('foto-plato');
+      source.setAttribute('src',' ');
+
+      this.navCtrl.push(RestaurantPage, 
+      this.restauranteslist[this.platoslist[this.actual].restauranteid]);
+
+      this.actual++;
+      this.updatePhoto(this.platoslist[this.actual].fotoid);
+
+    }else{
+      console.log('FINISH: '+this.actual);
+      let source = document.getElementById('foto-plato');
+      source.setAttribute('src','../../assets/imgs/NoMore.JPG');
+    }
   }
 
   onDislike(){
-    let source = document.getElementById('foto-plato');
-      source.setAttribute('src',' ');
     
-    if(this.actual<1)  this.actual++;
+    if(this.actual<this.total){  
+      console.log('I: '+this.actual);
 
-    this.filter();
-    this.updatePhoto(this.platoslist[this.actual].fotoid);
+      let source = document.getElementById('foto-plato');
+      source.setAttribute('src',' ');
+
+      this.actual++;
+      this.updatePhoto(this.platoslist[this.actual].fotoid);
+      
+    }else{
+      let source = document.getElementById('foto-plato');
+      source.setAttribute('src','../../assets/imgs/NoMore.JPG');
+    }
+
   }
 
   filter(){
@@ -398,7 +392,7 @@ export class HomePage {
            break; 
          } else {
            if(this.actual<1) this.actual++;
-          }   
+        }   
     }
   }
 }

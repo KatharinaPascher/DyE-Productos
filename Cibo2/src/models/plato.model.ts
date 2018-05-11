@@ -14,6 +14,7 @@ export class Plato {
     distancia:number;
     
     fotoid:string;
+    fotourl: string;
     restauranteid:number;
 
     constructor(){
