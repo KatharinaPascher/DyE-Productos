@@ -25,6 +25,7 @@ import { Camera} from '@ionic-native/camera';
 import { ImageProvider } from '../providers/image/image';
 import { FotoProvider } from '../providers/foto/foto';
 import { RestauranteProvider } from '../providers/restaurante/restaurante';
+import { InfofotoProvider } from '../providers/infofoto/infofoto';
 
 /** constante firebaseConfig con la información de nuestro api de firebase */
 export const firebaseConfig = {
@@ -71,7 +72,8 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ImageProvider,
     FotoProvider,
-    RestauranteProvider
+    RestauranteProvider,
+    InfofotoProvider
   ]
 })
 export class AppModule {}

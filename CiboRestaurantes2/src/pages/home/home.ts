@@ -44,11 +44,10 @@ restaurante : Restaurante;
 
   ionViewDidEnter(){
 
-    let uid=this.auth.getId;
     let storageRef = firebase.storage().ref();
-    let imageRef = storageRef.child('logos/'+uid+'.JPG');
+    let imageRef = storageRef.child('logos/'+'001.JPG');
     imageRef.getDownloadURL().then(function(urls){
-      let source = document.getElementById('foto');
+      let source = document.getElementById('foto-restaurante');
       source.setAttribute('src',urls);
     });
     

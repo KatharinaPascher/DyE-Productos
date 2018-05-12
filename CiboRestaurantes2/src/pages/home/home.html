@@ -1,52 +1,35 @@
-<ion-header>
-
-</ion-header>
-
-<ion-content>
-
+<ion-content class="background-beige">
     <ion-card>
-      
-      <img id='foto' src={{urls}}/>
+
+      <img id='foto-restaurante'/>
 
       <ion-card-content>
-        <ion-card-title>
-          {{restaurante.nombre}}
-        </ion-card-title>
-  
-        <p>
-          {{restaurante.user}}
-        </p>
-  
+        <ion-card-title>Restaurante Ático</ion-card-title>
+        <p>Bocados de autor en distinguido y luminoso salón y cócteles en terraza con olivos e icónicas vistas</p>
+        <p>Calle Marqués de Valdeiglesias, 1, 28004 Madrid, España</p>
       </ion-card-content>
-  
+
       <ion-item>
-        <ion-icon name='at' item-start style="color: #d03e84"></ion-icon>
-        Sitio web:
-        <ion-badge item-end>{{name}}</ion-badge>
+        <ion-icon name='at' item-start style="color: #d03e84">
+        </ion-icon>
+        <ion-badge item-end>www.atico-restaurantes.com</ion-badge>
       </ion-item>
 
       <ion-item>
-        <ion-icon name='navigate' item-start style="color: #55acee"></ion-icon>
-        Dirección:
-        <ion-badge item-end>Calle tal..sdfsfadsdsadsdsaddasddsadfsdfsdfsdfsdfsdf.</ion-badge>
-      </ion-item>
-
-      <ion-item>
-          <ion-icon name='camera' item-start style="color: #55acee"></ion-icon>
-          Fotos subidas:
-          <ion-badge item-end>555</ion-badge>
+          <ion-icon name='call' item-start style="color: #55acee"></ion-icon>
+          <ion-badge item-end>677 234 123</ion-badge>
       </ion-item>  
-
     </ion-card>
-    
+
     <ion-card #map id="map"></ion-card>
 
-    <button ion-button color="danger" block (click)='cerrarSesion()'>
-        <ion-icon name="exit"></ion-icon>
-        Cerrar Sesión</button>
-
-  
-  </ion-content>
+    <ion-list>
+        <button logout ion-item (click)="cerrarSesion()">
+          <ion-icon name="exit" color="danger" item-start></ion-icon>
+          Cerrar Sesión
+        </button>
+      </ion-list>
+</ion-content>
 
 
 <!--Google Maps API Key AIzaSyAQe495ykATR6MLfJ1X6LtCNTpA_MCPIT4 -->

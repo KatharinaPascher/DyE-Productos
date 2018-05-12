@@ -62,14 +62,24 @@ export class RegisterPage {
     
       toast.present();
 
+
+
       this.restaurante.user=this.auth.getId;
 
+
+
       this.resProvider.addRestaurante(this.restaurante).then(ref => {
+
         this.toastCtrl.create({
+
           message: 'creado',
+
           duration: 1000,
+
           position: 'middle'
+
         });
+
       });
     })
     .catch(err=>{

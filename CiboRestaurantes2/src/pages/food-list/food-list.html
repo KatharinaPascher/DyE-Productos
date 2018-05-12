@@ -6,19 +6,52 @@
 -->
 <ion-header>
   
-</ion-header>
-
-
-<ion-content padding>
-
-    <button ion-button full (click)="downloadImageUrls()">Show Images</button>
-
-    <ion-grid>
-        <ion-row>
-          <ion-col col-12 col-sm-4 col-md-3 col-lg-2 *ngFor="let image of imageUrls">
-            <img [src]="image" />
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-</ion-content>
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+      <ion-list>
+          <ion-card>
+  
+              <img  src='https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC006.JPG?alt=media&token=38f49cbd-5944-431c-b37a-0b61775316fb'/>
+        
+              <ion-item>
+                <ion-icon name='cash' item-end style="color: #d03e84">
+                </ion-icon>
+                <ion-badge item-end>14</ion-badge>
+              </ion-item>
+   
+            </ion-card>
+      </ion-list>
+  
+      <ion-list>
+          <ion-card>
+  
+              <img  src='https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC002.JPG?alt=media&token=a77f954b-5d70-41d4-8eda-802ac20dde50'/>
+        
+              <ion-item>
+                <ion-icon name='cash' item-end style="color: #d03e84">
+                </ion-icon>
+                <ion-badge item-end>45</ion-badge>
+              </ion-item>
+   
+            </ion-card>
+      </ion-list>
+  
+      <ion-list>
+          <ion-card>
+  
+              <img  src='https://firebasestorage.googleapis.com/v0/b/bbdd-cibo-login.appspot.com/o/fotosComidas%2FC001.JPG?alt=media&token=337fcc70-d068-4b1e-ade3-71b35fa6c898'/>
+        
+              <ion-item>
+                <ion-icon name='cash' item-end style="color: #d03e84">
+                </ion-icon>
+                <ion-badge item-end>13</ion-badge>
+              </ion-item>
+   
+            </ion-card>
+      </ion-list>
+  
+  </ion-content>
+  

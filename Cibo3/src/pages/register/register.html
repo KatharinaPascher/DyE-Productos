@@ -1,0 +1,47 @@
+<ion-header class="transparent">
+
+  <ion-navbar>
+    <ion-title>REGISTRO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class = "page-login">
+  <div class="center-register">
+    <ion-list >
+
+    <ion-item class="transparent"> 
+      <ion-label floating>Correo</ion-label> 
+      
+      <ion-input
+          [(ngModel)]="user.email"
+          name="email"
+          type="text"
+          autocapitalize="off"
+          required
+        >
+        </ion-input>
+
+    </ion-item>
+ 
+    <ion-item class="transparent">  
+      <ion-label floating>Contraseña</ion-label>      
+      
+      <ion-input
+          [(ngModel)]="user.password"
+          name="password"
+          type="password"
+          required
+        >  
+      </ion-input>
+
+    </ion-item>
+
+  </ion-list>
+</div>
+<section class="trn">
+  <div padding>
+    <button ion-button color="primary" block (click)='register()'>Register</button>
+  </div>
+</section>
+</ion-content>

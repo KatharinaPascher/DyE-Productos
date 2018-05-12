@@ -1,0 +1,17 @@
+<ion-content padding  class="background-beige">
+ 
+    <ion-list>
+        <ion-card *ngFor="let th of prov" (click)="onItemTapped(th)">
+
+            <img  src={{th.fotourl}}/>
+      
+            <ion-item>
+              <ion-icon name='cash' item-end style="color: #d03e84">
+              </ion-icon>
+              <ion-badge item-end>{{th.price}}</ion-badge>
+            </ion-item>
+ 
+          </ion-card>
+    </ion-list>
+      
+</ion-content>
