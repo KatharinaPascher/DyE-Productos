@@ -31,6 +31,7 @@ import { RestauranteProvider } from '../providers/restaurante/restaurante';
 import { SharedataProvider } from '../providers/sharedata/sharedata';
 import { SharedatafotoProvider } from '../providers/sharedatafoto/sharedatafoto';
 import { SharefavsProvider } from '../providers/sharefavs/sharefavs';
+import { SharerestaurantedataProvider } from '../providers/sharerestaurantdata/sharerestaurantdata';
 
 /** constante firebaseConfig con la información de nuestro api de firebase */
 export const firebaseConfig = {
@@ -82,7 +83,8 @@ export const firebaseConfig = {
     RestauranteProvider,
     SharedataProvider,
     SharedatafotoProvider,
-    SharefavsProvider
+    SharefavsProvider,
+    SharerestaurantedataProvider
   ]
 })
 export class AppModule {}

@@ -12,9 +12,9 @@ export class SharedatafotoProvider {
   }
   
   setPlatos(pnew:Plato[]) {
-    console.log('log llamado: '+pnew[1].price);
+    //console.log('log llamado: '+pnew[1].price);
     this.ps=pnew;
-    console.log('llamado pregado:'+this.ps[1].price);
+    //console.log('llamado pregado:'+this.ps[1].price);
   }
 
   getToplas(){
@@ -22,7 +22,7 @@ export class SharedatafotoProvider {
   }
 
   getPlato(i:number) {
-    console.log('llamado:'+this.ps[i].price);
+    //console.log('llamado:'+this.ps[i].price);
       return this.ps[i];
   }  
 

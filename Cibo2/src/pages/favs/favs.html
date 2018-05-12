@@ -1,8 +1,12 @@
 <ion-content padding  class="background-beige">
  
-    <ion-list>
-      <button ion-item *ngFor="let th of list" >
-        <p><strong>{{th.price}}: </strong>{{th.fotoid}}</p>     
+    <ion-list id="list-favs">
+      <button ion-item *ngFor="let th of prov" (click)="onItemTapped(th)">
+        <ion-avatar item-start>
+            <img src={{th.fotourl}}>
+        </ion-avatar>
+        
+        <p><strong>Precio: </strong>{{th.price}}</p>     
         
       </button>
     </ion-list>

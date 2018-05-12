@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SharedatafotoProvider } from '../../providers/sharedatafoto/sharedatafoto';
 import { SharefavsProvider } from '../../providers/sharefavs/sharefavs';
 import { Plato } from '../../models/plato.model';
+import { RestaurantPage } from '../../pages/restaurant/restaurant';
 
 /**
  * Generated class for the FavsPage page.
@@ -20,19 +21,38 @@ export class FavsPage {
   list:Plato[];/*=[new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
     new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
     new Plato(),new Plato(),new Plato(),new Plato(),new Plato()];*/
-  prov:Plato;
+  prov:Plato[]=[];
+  flist:number[]=[];
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    public sharef: SharedatafotoProvider) {
-      //this.list=this.sharef.getToplas();
-      //this.prov=this.sharef.getPlato(0);
-      //console.log('log'+this.list[0].price);
+    public sharef: SharedatafotoProvider, 
+    public f: SharefavsProvider) {
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavsPage');
+
+    let source = document.getElementById('list-favs');
+ 
+  }
+
+  ionViewDidEnter(){
+
+    this.flist=this.f.getF();
+
+    for(let i of this.flist){
+      this.prov.push(this.sharef.getPlato(i));
+    }
+  }
+
+  ionViewWillEnter() {
+  }
+
+  onItemTapped(th){
+    console.log('asdsad: '+th.restauranteid);
+    this.navCtrl.push(RestaurantPage,th.restauranteid);
   }
 
 }

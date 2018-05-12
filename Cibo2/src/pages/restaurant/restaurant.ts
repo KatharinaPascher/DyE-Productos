@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MapType } from '@angular/compiler/src/output/output_ast';
 import { Restaurante } from '../../models/restaurante.model';
+import { SharerestaurantedataProvider} from '../../providers/sharerestaurantdata/sharerestaurantdata'
+
 import firebase from 'firebase';
 
 /**
@@ -21,14 +23,18 @@ export class RestaurantPage {
   @ViewChild('map') mapElement;
   map:any;
   rest:Restaurante;
+  rest2:Restaurante;
 
   constructor(public navCtrl: NavController, 
-    public navParams: NavParams
+    public navParams: NavParams,
+    public sr:SharerestaurantedataProvider
     ) {
 
       this.rest = this.navParams.data;
+      this.rest2=this.sr.getRest(2);
+
       let storageRef = firebase.storage().ref();
-      let imageRef = storageRef.child('logos/'+this.rest.fotoid);
+      let imageRef = storageRef.child('logos/'+this.rest2.fotoid);
      
       imageRef.getDownloadURL().then(function(urls){
         let source = document.getElementById('foto-restaurante');
@@ -37,6 +43,7 @@ export class RestaurantPage {
   }
 
   ionViewDidLoad() {
+    this.initMap2();
   }
 
   //Función con la información para inicializar un mapa. Se puede configurar la latitud y longitud
