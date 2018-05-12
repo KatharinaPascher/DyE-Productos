@@ -22,7 +22,7 @@ declare var google;
 export class RestaurantPage {
   @ViewChild('map') mapElement;
   map:any;
-  rest:Restaurante;
+  rest:number;
   rest2:Restaurante;
 
   constructor(public navCtrl: NavController, 
@@ -49,7 +49,7 @@ export class RestaurantPage {
   //Función con la información para inicializar un mapa. Se puede configurar la latitud y longitud
   initMap2(){
     //Aquí se ponen las coordenadas!!!!
-    let latLng = new google.maps.LatLng(this.rest.lat,this.rest.long);
+    let latLng = new google.maps.LatLng(this.rest2.lat,this.rest2.long);
     
     let mapOptions = {
       center:latLng,
