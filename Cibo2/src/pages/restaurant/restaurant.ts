@@ -31,7 +31,7 @@ export class RestaurantPage {
     ) {
 
       this.rest = this.navParams.data;
-      this.rest2=this.sr.getRest(2);
+      this.rest2=this.sr.getRest(this.navParams.data);
 
       let storageRef = firebase.storage().ref();
       let imageRef = storageRef.child('logos/'+this.rest2.fotoid);

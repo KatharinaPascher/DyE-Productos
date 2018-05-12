@@ -51,7 +51,7 @@ export class FavsPage {
   }
 
   onItemTapped(th){
-    console.log('asdsad: '+th.restauranteid);
+  
     this.navCtrl.push(RestaurantPage,th.restauranteid);
   }
 
