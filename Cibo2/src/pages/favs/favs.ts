@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { SharedatafotoProvider } from '../../providers/sharedatafoto/sharedatafoto';
 import { SharefavsProvider } from '../../providers/sharefavs/sharefavs';
 import { Plato } from '../../models/plato.model';
@@ -27,32 +27,43 @@ export class FavsPage {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public sharef: SharedatafotoProvider, 
-    public f: SharefavsProvider) {
+    public f: SharefavsProvider,
+    public view: ViewController) {
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavsPage');
-
-    let source = document.getElementById('list-favs');
- 
   }
 
   ionViewDidEnter(){
+    //this.view.dismiss();
+ 
+  }
+
+  ionViewWillEnter() {
 
     this.flist=this.f.getF();
 
     for(let i of this.flist){
       this.prov.push(this.sharef.getPlato(i));
     }
+
+    
   }
 
-  ionViewWillEnter() {
+  ionViewDidLeave(){
+   
+    //this.view.dismiss();
+  }
+  ionViewWillLeave(){
+    
   }
 
   onItemTapped(th){
-  
+    
     this.navCtrl.push(RestaurantPage,th.restauranteid);
+    this.view.dismiss();
   }
 
 }
