@@ -23,10 +23,11 @@ export class HomePage {
   //6 restaurantes
   restauranteslist:Restaurante[]=[new Restaurante(),new Restaurante(),
     new Restaurante(),new Restaurante(),new Restaurante(),new Restaurante()];
-  //20 platos
+  //17 platos
   platoslist:Plato[]=[new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
                       new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),new Plato(),
                       new Plato(),new Plato(),new Plato(),new Plato(),new Plato()];
+  favslist:Favs[];
 
   actual:number=0;
   total=this.platoslist.length-1;  
@@ -363,6 +364,7 @@ export class HomePage {
 
     let storageRef = firebase.storage().ref();
     let imageRef = storageRef.child('fotosComidas/'+id);
+    
     imageRef.getDownloadURL().then(function(urls){
       let source = document.getElementById('foto-plato');
       source.setAttribute('src',urls);
